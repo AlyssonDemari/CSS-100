@@ -1,0 +1,258 @@
+@import "../standard.scss";
+
+$bg: #42A7A1;
+$white: #fff;
+$header: #F1BA64; 
+$lines: rgba(100, 95, 95, 0.521); 
+$red-line: #FA7373;
+$blue-line: #7BA2FF;
+
+
+.frame{
+    @include center();
+    background: $bg;
+}
+
+.container{
+    background: $white;
+    width: 70%;
+    height: 60%;
+    border-radius: 8px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background: $header;
+    height: 30%;
+    padding: 20px;
+    border-radius: 8px 8px 0px 0px;
+
+    h1, h3{
+        font-size: .7rem;
+        color: $white;
+        font-weight: 600;
+    }
+
+    h2{
+        font-size: .7rem;
+        color: $white;
+        font-weight: 600;
+    }
+}
+
+article{
+    height: 70%;
+    padding: 10px;
+
+    .container-statistic{
+        position: relative;
+        height: 100%;
+
+        .title{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+            height: 10%;
+
+            h1{
+                font-size: .6rem;
+                display: flex;
+                gap: 5px;
+                align-items: center;
+                color: $lines;
+
+                &::before{
+                    content: "";
+                    display: inline-flex;
+                    align-items: center;
+                    width: 15px;
+                    height: 2px;
+                    background: $red-line;
+                    border-radius: 10px;
+                }
+
+                &:nth-child(1)::before{
+                    background: $blue-line;
+
+                }
+            }
+        }
+
+        .container-lines{
+            position: relative;
+            height: 80%;
+
+
+            .lines{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 100%;
+                height: 100%;
+        
+                .line-1{
+                    width: 100%;
+                    height: 1px;
+                    background: $lines;
+                }
+        
+                .line-2{
+                    @extend .line-1;
+                }
+        
+                .line-3{
+                    @extend .line-1;
+                }
+            }
+
+        }
+
+        .graf-red{
+            position: absolute;
+            top: 0;
+            left:0;
+            width: 100%;
+            height: 100%;
+
+            svg{
+                position: absolute;
+                top: -20%;
+                fill: none;
+                stroke: $red-line;
+                stroke-width: 2;
+            }
+
+            .points{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                [class^="point-"]{
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 3px;
+                    background: $red-line;
+                    cursor: pointer;
+                    z-index: 10;
+
+                    &:hover .tooltip{
+                        visibility: visible;
+                        opacity: 1;
+                        transform: translateY(-10px);
+                    }
+                }
+
+                .point-0 {top: 64px; left: 18px;}
+                .point-1 {top: 23px; left: 52px;}
+                .point-2 {top: 38px; left: 92px;}
+                .point-3 {top: 28px; left: 126px;}
+                .point-4 {top: 38px; left: 162px;}
+                .point-5 {top: 47px; left: 197px;}   
+                .point-6 {top: 37px; left: 230px;}
+
+                .tooltip{
+                    position: absolute;
+                    top: -20px;
+                    left: -10px;
+                    font-size: .6rem;
+                    color: $white;
+                    background: $red-line;
+                    border-radius: 3px;
+                    padding: 5px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all .5s ;
+
+
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 20px;
+                        left: 8px;
+                        border: 5px solid;
+                        border-color: $red-line transparent transparent transparent;
+                    }
+                }
+            }
+        }
+
+        .graf-blue{
+            @extend .graf-red;
+
+            svg{
+                top: 8%;
+                stroke:$blue-line; 
+            }
+
+            .points-blue{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+
+                [class^="point-"] {
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 3px;
+                    cursor: pointer;
+                    z-index: 10;
+                    background-color: $blue-line;
+
+                    &:hover .tooltip-blue{
+                        visibility: visible;
+                        transform: translateY(-10px);
+                        opacity: 1;
+                    }
+                }
+                .point-0 {top: 76px; left: 19px;}
+                .point-1 {top: 67px; left: 53px;}
+                .point-2 {top: 90px; left: 92px;}
+                .point-3 {top: 62px; left: 128px;}
+                .point-4 {top: 71px; left: 162px;}
+                .point-5 {top: 80px; left: 197px;}   
+                .point-6 {top: 52px; left: 230px;}
+                
+                .tooltip-blue{
+                    position: absolute;
+                    top: -20px;
+                    left: -10px;
+                    font-size: 0.6rem;
+                    padding: 5px;
+                    color: $white;
+                    background-color: $blue-line;
+                    border-radius: 3px;
+                    visibility: hidden;
+                    opacity: 0;
+                    transition: all 0.5s;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 20px;
+                        left: 8px;
+                        border: 5px solid;
+                        border-color: $blue-line #0000 #0000 #0000;
+                    }
+                }
+            }
+        }
+    }
+
+    .days{
+        height: 10%;
+
+        ul{
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+
+            li{
+                font: 0.7rem;
+                color: $lines;
+            }
+        }
+    }
+}

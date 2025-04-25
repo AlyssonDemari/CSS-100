@@ -1,0 +1,231 @@
+@import "../standard.scss";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,800);
+
+$blue: #5F98CD;
+$blue-dark: #264057;
+$blue-light: #B2DAFF;
+$white: #FFFFFF;
+$line: #E1E1E1;
+$coment: rgb(102, 99, 99);
+$navbar: #43627D;
+$font: 'Open Sans', sans-serif;
+$transition-default: all 0.3s ease-in-out;
+
+.frame{
+    @include center();
+    background: $blue-dark;
+    font-family: $font;
+    overflow-x: hidden;
+}
+
+.container{
+    position: relative;
+    width: 75%;
+    height: 75%;
+    background: $white;
+    border-radius: 3px;
+    transition: $transition-default;
+    z-index: 4;
+
+    &.active{
+        transition: $transition-default;
+        transform: translateX(130px);
+    }
+}
+
+.cont-navbar{
+    position: absolute;
+    background: $navbar;
+    width: 15%;
+    height: 50%;
+    overflow: hidden;
+    transition: $transition-default;
+    border-radius: 10px 0 0 10px;
+
+    .navbar{
+        height: 100%;
+
+        ul{
+            height: 100%;
+
+            li{
+                display: flex;
+                align-items: center;
+                height: 20%;
+                padding: 0 10px;
+                color: $white;
+
+                &:hover{
+                    background: $blue-dark;
+                    cursor: pointer;
+                }
+
+                span{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+    &.active{
+        transform: translateX(-63%);
+        transition: $transition-default;
+    }
+}
+
+header{
+    @include center();
+    background: $blue;
+    height: 20%;
+
+    nav{
+        @include center( row, space-around);
+        width: 100%;
+        color: $white;
+        font-size: .8rem;
+        
+        .hamburger{
+            padding: 10px;
+
+            .line{
+                position: relative;
+                top: 5px;
+                background: $blue-light;
+                width: 30px;
+                height: 4px;
+                border-radius: 20px;
+                transition: all .3s ease-in-out;
+
+                &::before,
+                &::after {
+                  content: '';
+                  position: absolute;
+                  top: -10px;
+                  background: $blue-light;
+                  transition: all 0.3s ease-in-out;
+                }
+          
+                &::before {
+                  left: 0;
+                  width: 20px;
+                  height: 4px;
+                  border-radius: 20px;
+                }
+          
+                &::after {
+                  left: 23px;
+                  width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                }
+            }
+
+            &:hover .line, 
+            &:hover .line::before, 
+            &:hover .line::after{
+                background: $white;
+
+            }
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .glass{
+            color: $blue-light;
+            font-size: 20px;
+            padding: 8px;
+
+            &:hover{
+                color: $white;
+                cursor: pointer;
+            }
+        }
+
+        .search{
+            position: absolute;
+            left: 60px;
+            visibility: hidden;
+            opacity: 0;
+            transition: $transition-default;
+
+            input[type="text"]{
+                padding: 10px;
+                border: none;
+                border-radius: 20px;
+                width: 210px;
+            }
+
+            &.active{
+                left: 20px;
+                visibility: visible;
+                opacity: 1;
+                transition: $transition-default;
+            }
+        }
+    }
+}
+
+main{
+    @include center();
+    position: relative;
+    height: 80%;
+    width: 100%;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        width: 1%;
+        height:100%;
+        background-color: $line;
+        z-index: 1;
+    }
+
+    .container-comments{
+        @include center(column, space-around);
+        font-size: .5rem;
+        height: 80%;
+        z-index: 2;
+
+        .comment-iten{
+            width: 90%;
+            margin-left: 20px;
+            transition: $transition-default;
+
+            h1{
+                color: $coment;
+                font-size: .7rem;
+                font-weight: 600;
+            }
+
+            p{
+                position: relative;
+                font-size: .7rem;
+                font-weight: 600;
+                color: $coment;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: -1.2rem;
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    border: 2px solid $blue;
+                    outline: 2px solid $white;
+                    background: $white;
+                }
+            }
+
+            &:hover h1, &:hover p, &:hover strong{
+                cursor: pointer;
+                color: $blue;
+                transition: $transition-default;
+            }
+        }
+    }
+}
+

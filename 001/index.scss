@@ -1,0 +1,77 @@
+@import "../standard";
+
+$gradiente-linear: linear-gradient(45deg, #43389F, #4ec6ca);
+$white: #fff;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.frame{
+    background: $gradiente-linear;
+}
+
+.container{
+    @include center();
+    flex-direction: column;
+    gap: 15px;
+    height: 100%;
+
+
+    .number{
+        display: flex;
+        width: 50%;
+        position: relative;
+
+
+        .one{
+            transform: translatex(5px);
+            height: 90px;
+            width: 25px;
+            border-radius: 3px;
+            background-color: $white;
+            z-index: 2;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .one1{
+            height: 30px;
+            width: 20px;
+            border-radius: 3px;
+            background-color: $white;
+            position: absolute;
+            top: 3px;
+            left: -9px;
+            transform: rotate(50deg);
+        }
+
+        .zero{
+            height: 90px;
+            width: 90px;
+            border-radius: 50%;
+            border: 22px solid $white;
+            z-index: 1;
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .zero1{
+            @extend .zero;
+            position: absolute;
+            left: 50%;
+            border: 22px solid $white;
+            z-index: 0;
+        }
+    }
+
+    .text{
+        line-height: 35px;
+        text-align: center;
+        color: $white;
+
+        h1{
+            font-size: 5rem;
+        }
+    }
+}

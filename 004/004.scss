@@ -1,0 +1,61 @@
+@import "../standard.scss";
+
+$white: #fff;
+$bg: #E56262;
+
+.container{
+    position: relative;
+    @include center();
+    height: 100%;
+    background: $bg;
+    border-radius: 8px;
+}
+
+.circleL{
+    position: absolute;
+    background: $white;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.473);
+    animation: upper 2s cubic-bezier(.10, .50, .10, .50) infinite alternate;
+}
+
+.circleM{
+    @extend .circleL;
+    width: 25%;
+    height: 25%;
+    animation: upperM 2s cubic-bezier(.10, .50, .10, .50) infinite alternate;
+}
+
+.circleS{
+    @extend .circleL;
+    width: 10%;
+    height: 10%;
+    animation: upperS 2s cubic-bezier(.10, .50, .10, .50) infinite alternate;
+}
+
+@keyframes upper{
+    0%, 10%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes upperM{
+    0%, 40%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes upperS{
+    0%, 70%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

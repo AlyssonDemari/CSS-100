@@ -1,0 +1,271 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: #42A7A1;
+}
+
+.container {
+  background: #fff;
+  width: 70%;
+  height: 60%;
+  border-radius: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background: #F1BA64;
+  height: 30%;
+  padding: 20px;
+  border-radius: 8px 8px 0px 0px;
+}
+header h1, header h3 {
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 600;
+}
+header h2 {
+  font-size: 0.7rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+article {
+  height: 70%;
+  padding: 10px;
+}
+article .container-statistic {
+  position: relative;
+  height: 100%;
+}
+article .container-statistic .title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  height: 10%;
+}
+article .container-statistic .title h1 {
+  font-size: 0.6rem;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  color: rgba(100, 95, 95, 0.521);
+}
+article .container-statistic .title h1::before {
+  content: "";
+  display: inline-flex;
+  align-items: center;
+  width: 15px;
+  height: 2px;
+  background: #FA7373;
+  border-radius: 10px;
+}
+article .container-statistic .title h1:nth-child(1)::before {
+  background: #7BA2FF;
+}
+article .container-statistic .container-lines {
+  position: relative;
+  height: 80%;
+}
+article .container-statistic .container-lines .lines {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+article .container-statistic .container-lines .lines .line-1, article .container-statistic .container-lines .lines .line-3, article .container-statistic .container-lines .lines .line-2 {
+  width: 100%;
+  height: 1px;
+  background: rgba(100, 95, 95, 0.521);
+}
+article .container-statistic .graf-red, article .container-statistic .graf-blue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+article .container-statistic .graf-red svg, article .container-statistic .graf-blue svg {
+  position: absolute;
+  top: -20%;
+  fill: none;
+  stroke: #FA7373;
+  stroke-width: 2;
+}
+article .container-statistic .graf-red .points, article .container-statistic .graf-blue .points {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+article .container-statistic .graf-red .points [class^=point-], article .container-statistic .graf-blue .points [class^=point-] {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #FA7373;
+  cursor: pointer;
+  z-index: 10;
+}
+article .container-statistic .graf-red .points [class^=point-]:hover .tooltip, article .container-statistic .graf-blue .points [class^=point-]:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(-10px);
+}
+article .container-statistic .graf-red .points .point-0, article .container-statistic .graf-blue .points .point-0 {
+  top: 64px;
+  left: 18px;
+}
+article .container-statistic .graf-red .points .point-1, article .container-statistic .graf-blue .points .point-1 {
+  top: 23px;
+  left: 52px;
+}
+article .container-statistic .graf-red .points .point-2, article .container-statistic .graf-blue .points .point-2 {
+  top: 38px;
+  left: 92px;
+}
+article .container-statistic .graf-red .points .point-3, article .container-statistic .graf-blue .points .point-3 {
+  top: 28px;
+  left: 126px;
+}
+article .container-statistic .graf-red .points .point-4, article .container-statistic .graf-blue .points .point-4 {
+  top: 38px;
+  left: 162px;
+}
+article .container-statistic .graf-red .points .point-5, article .container-statistic .graf-blue .points .point-5 {
+  top: 47px;
+  left: 197px;
+}
+article .container-statistic .graf-red .points .point-6, article .container-statistic .graf-blue .points .point-6 {
+  top: 37px;
+  left: 230px;
+}
+article .container-statistic .graf-red .points .tooltip, article .container-statistic .graf-blue .points .tooltip {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 0.6rem;
+  color: #fff;
+  background: #FA7373;
+  border-radius: 3px;
+  padding: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+article .container-statistic .graf-red .points .tooltip::before, article .container-statistic .graf-blue .points .tooltip::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 8px;
+  border: 5px solid;
+  border-color: #FA7373 transparent transparent transparent;
+}
+article .container-statistic .graf-blue svg {
+  top: 8%;
+  stroke: #7BA2FF;
+}
+article .container-statistic .graf-blue .points-blue {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+article .container-statistic .graf-blue .points-blue [class^=point-] {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  z-index: 10;
+  background-color: #7BA2FF;
+}
+article .container-statistic .graf-blue .points-blue [class^=point-]:hover .tooltip-blue {
+  visibility: visible;
+  transform: translateY(-10px);
+  opacity: 1;
+}
+article .container-statistic .graf-blue .points-blue .point-0 {
+  top: 76px;
+  left: 19px;
+}
+article .container-statistic .graf-blue .points-blue .point-1 {
+  top: 67px;
+  left: 53px;
+}
+article .container-statistic .graf-blue .points-blue .point-2 {
+  top: 90px;
+  left: 92px;
+}
+article .container-statistic .graf-blue .points-blue .point-3 {
+  top: 62px;
+  left: 128px;
+}
+article .container-statistic .graf-blue .points-blue .point-4 {
+  top: 71px;
+  left: 162px;
+}
+article .container-statistic .graf-blue .points-blue .point-5 {
+  top: 80px;
+  left: 197px;
+}
+article .container-statistic .graf-blue .points-blue .point-6 {
+  top: 52px;
+  left: 230px;
+}
+article .container-statistic .graf-blue .points-blue .tooltip-blue {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 0.6rem;
+  padding: 5px;
+  color: #fff;
+  background-color: #7BA2FF;
+  border-radius: 3px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s;
+}
+article .container-statistic .graf-blue .points-blue .tooltip-blue::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 8px;
+  border: 5px solid;
+  border-color: #7BA2FF rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+article .days {
+  height: 10%;
+}
+article .days ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+article .days ul li {
+  font: 0.7rem;
+  color: rgba(100, 95, 95, 0.521);
+}/*# sourceMappingURL=005.css.map */

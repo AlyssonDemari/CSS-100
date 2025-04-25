@@ -1,0 +1,159 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(45deg, #EEBE6C 0%, #CA7C4E 100%);
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.container {
+  display: flex;
+  background: #FFFFFF;
+  height: 80%;
+  width: 80%;
+  border-radius: 3px;
+  box-shadow: 10px 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.profile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 65%;
+  height: 100%;
+}
+.profile .picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.profile .picture h1 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #786450;
+}
+.profile .picture h2 {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #786450;
+}
+.profile .picture .img-wrapper {
+  display: inline-block;
+  border-radius: 50%;
+  margin: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.profile .picture .img-wrapper::before, .profile .picture .img-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid #786450;
+  border-color: #786450 transparent #786450 #786450;
+  border-radius: 50%;
+  z-index: 4;
+  width: 85px;
+  height: 85px;
+  transition: all 1s ease-in-out;
+}
+.profile .picture .img-wrapper::after {
+  top: -5px;
+  left: -5px;
+  width: 75px;
+  height: 75px;
+  border-color: #786450 transparent #786450 transparent;
+}
+.profile .picture .img-wrapper:hover::before, .profile .picture .img-wrapper:hover::after {
+  transform: rotate(360deg);
+}
+.profile .picture .img-wrapper:hover::after {
+  transform: rotate(-360deg);
+}
+.profile .picture img {
+  border-radius: 50%;
+}
+.profile .buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.profile .buttons button {
+  width: 120px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid #786450;
+  background: #F0F0F0;
+  font-weight: 600;
+  color: #786450;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.profile .buttons button:hover {
+  background: #786450;
+  color: #FFFFFF;
+  transition: all 0.5s ease-in-out;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 35%;
+  height: 100%;
+}
+.numbers [class^=square-] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #F5E8DF;
+  width: 100%;
+  height: 33%;
+  transition: all 0.3s ease-in-out;
+}
+.numbers [class^=square-] h1 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #786450;
+}
+.numbers [class^=square-] h2 {
+  font-size: 0.7rem;
+  font-weight: 300;
+  color: #786450;
+}
+.numbers [class^=square-]:hover {
+  background: #E1CFC2;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}/*# sourceMappingURL=006.css.map */

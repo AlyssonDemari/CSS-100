@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>007</title>
+    <link rel="stylesheet" href="007.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <section class="frame">
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="hamburger">
+                        <div class="line"></div>
+                    </div>
+                    <h1>Notifications</h1>
+                    <div class="glass">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <div class="search">
+                        <input type="text" name="search" id="search" placeholder="Search...">
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                <div class="container-comments">
+                    <div class="comment-iten">
+                        <p>9:24 AM</p>
+                        <h1><strong>John Walker</strong> posted a photo on your wall.</h1>
+                    </div>
+                    <div class="comment-iten">
+                        <p>9:19 AM</p>
+                        <h1><strong>Alice Parker</strong> commented your last post.</h1>
+                    </div>
+                    <div class="comment-iten">
+                        <p>Yesterday</p>
+                        <h1><strong>Luke Waybe</strong> added you as frined.</h1>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <div class="cont-navbar">
+            <div class="navbar">
+                <ul>
+                    <li><span class="fa fa-dashboard"></span>Dasboard</li>
+                    <li><span class="fa fa-user"></span>Profile</li>
+                    <li><span class="fa fa-bell"></span>Notifications</li>
+                    <li><span class="fa fa-comments"></span>Messagens</li>
+                    <li><span class="fa fa-gear"></span>Settings</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const glassIcon = document.querySelector('.glass'); 
+
+        glassIcon.addEventListener('click', () => {
+            const search = document.querySelector('.search');
+
+            search.classList.toggle('active');
+        })
+
+        const burg = document.querySelector('.hamburger');
+
+        burg.addEventListener('click', () => {
+            const cont = document.querySelector('.container');
+            const navbar = document.querySelector('.cont-navbar');
+            cont.classList.toggle('active');
+            navbar.classList.toggle('active');
+        })
+
+    </script>
+</body>
+</html>

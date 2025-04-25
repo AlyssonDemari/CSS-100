@@ -1,0 +1,137 @@
+@import "../standard.scss";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,300);
+
+$bg: linear-gradient(45deg, #EEBE6C 0%, #CA7C4E 100%);
+$white: #FFFFFF; 
+$letter: #786450; 
+$ligth: #F5E8DF;
+$ligth-hover: #E1CFC2;
+$button: #F0F0F0;
+$font: 'Open Sans', Helvetica, sans-serif;
+
+@mixin title($size, $weight){
+    font-size: $size;
+    font-weight: $weight;
+    color: $letter;
+}
+
+.frame{
+    @include center();
+    background: $bg;
+    font-family: $font;
+}
+
+.container{
+    display: flex;
+    background: $white;
+    height: 80%;
+    width: 80%;
+    border-radius: 3px;
+    box-shadow: 10px 2px 10px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.26);
+}
+
+.profile{
+    @include center(column, space-evenly);
+    width: 65%;
+    height: 100%;
+
+    .picture{
+        @include center( column);
+
+        h1{ @include title(.9rem, 600)}
+        h2{ @include title(.7rem, 300)}
+
+        .img-wrapper{
+            display: inline-block;
+            border-radius: 50%;
+            margin: 20px;
+            position: relative;
+            cursor: pointer;
+
+            &::before{
+                content: "";
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border: 2px solid $letter;
+                border-color: $letter transparent $letter $letter;
+                border-radius: 50%;
+                z-index: 4;
+                width: 85px;
+                height: 85px;
+                transition: all 1s ease-in-out;
+            }
+
+            &::after{
+                @extend ::before;
+                top: -5px;
+                left: -5px;
+
+                width: 75px;
+                height: 75px;
+                border-color: $letter transparent $letter transparent
+            }
+
+            &:hover::before{
+                transform: rotate(360deg);
+            }
+
+            &:hover::after{
+                transform: rotate(-360deg);
+            }
+        }
+
+        img{
+            border-radius: 50%;
+        }
+    }
+
+    .buttons{
+        @include center( column);
+        gap: 10px;
+
+        button{
+            width: 120px;
+            padding: 5px;
+            border-radius: 20px;
+            border: 1px solid $letter;
+            background: $button;
+            font-weight: 600;
+            color: $letter;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+
+            &:hover{
+                background: $letter;
+                color: $white;
+                transition: all .5s ease-in-out;
+            }
+        }
+    }
+}
+
+.numbers{
+    @include center(column, space-between);
+
+    width: 35%;
+    height: 100%;
+
+    [class^="square-"]{
+        @include center( column);
+        background: $ligth;
+        width: 100%;
+        height: 33%;
+        transition: all .3s ease-in-out;
+
+        h1{ @include title(.9rem, 600)}
+        h2{ @include title(.7rem, 300)}
+
+        &:hover{
+            background: $ligth-hover;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+        }
+    }
+}
