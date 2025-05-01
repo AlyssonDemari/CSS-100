@@ -1,0 +1,77 @@
+@import "../standard.scss";
+
+$bg: black;
+$white: white;
+
+.frame{
+    @include center();
+    background: $bg;
+    filter: contrast(25);
+}
+
+.container{
+    @include center();
+    width: 100%;
+    height: 100%;
+}
+
+.ball{
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: $white;
+    filter: blur(3px);
+
+    @for $i from 1 through 8{
+        .circleB-#{$i}{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: $white;
+            transform: rotate((random(300)) + deg);
+
+            &:after{
+                content: '';
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                background: $white;
+                transform-origin: 10px;
+                border-radius: 50%;
+                animation: rotate (3 + $i) + s linear infinite;
+            }
+        }
+    }
+
+    @for $i from 1 through 10{
+        .circleS-#{$i}{
+            position: absolute;
+            top: 38px;
+            left: 38px;
+            transform: rotate((random(300)) + deg);
+
+            &::after{
+                content: '';
+                position: absolute;
+                width: ((7 + $i) + px);
+                height: ((7 + $i) + px);
+                background: $white;
+                border-radius: 50%;
+                transform-origin: 60px 60px;
+                animation: rotate (3 + $i) + s linear (0 + $i) + s infinite;
+            }
+        }
+    }
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    } 100%{
+        transform: rotate(360deg);
+    }
+}
