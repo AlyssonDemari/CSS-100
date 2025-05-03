@@ -54,7 +54,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(276deg);
+  transform: rotate(122deg);
 }
 .ball .circleB-1:after {
   content: "";
@@ -74,7 +74,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(245deg);
+  transform: rotate(220deg);
 }
 .ball .circleB-2:after {
   content: "";
@@ -94,7 +94,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(239deg);
+  transform: rotate(191deg);
 }
 .ball .circleB-3:after {
   content: "";
@@ -114,7 +114,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(160deg);
+  transform: rotate(70deg);
 }
 .ball .circleB-4:after {
   content: "";
@@ -134,7 +134,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(285deg);
+  transform: rotate(262deg);
 }
 .ball .circleB-5:after {
   content: "";
@@ -154,7 +154,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(278deg);
+  transform: rotate(116deg);
 }
 .ball .circleB-6:after {
   content: "";
@@ -174,7 +174,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(102deg);
+  transform: rotate(228deg);
 }
 .ball .circleB-7:after {
   content: "";
@@ -194,7 +194,7 @@ body {
   height: 50px;
   border-radius: 50%;
   background: white;
-  transform: rotate(263deg);
+  transform: rotate(283deg);
 }
 .ball .circleB-8:after {
   content: "";
@@ -210,7 +210,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(84deg);
+  transform: rotate(129deg);
 }
 .ball .circleS-1::after {
   content: "";
@@ -226,7 +226,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(142deg);
+  transform: rotate(7deg);
 }
 .ball .circleS-2::after {
   content: "";
@@ -242,7 +242,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(149deg);
+  transform: rotate(74deg);
 }
 .ball .circleS-3::after {
   content: "";
@@ -258,7 +258,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(295deg);
+  transform: rotate(186deg);
 }
 .ball .circleS-4::after {
   content: "";
@@ -274,7 +274,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(34deg);
+  transform: rotate(32deg);
 }
 .ball .circleS-5::after {
   content: "";
@@ -290,7 +290,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(200deg);
+  transform: rotate(279deg);
 }
 .ball .circleS-6::after {
   content: "";
@@ -306,7 +306,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(220deg);
+  transform: rotate(107deg);
 }
 .ball .circleS-7::after {
   content: "";
@@ -322,7 +322,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(177deg);
+  transform: rotate(57deg);
 }
 .ball .circleS-8::after {
   content: "";
@@ -338,7 +338,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(286deg);
+  transform: rotate(180deg);
 }
 .ball .circleS-9::after {
   content: "";
@@ -354,7 +354,7 @@ body {
   position: absolute;
   top: 38px;
   left: 38px;
-  transform: rotate(151deg);
+  transform: rotate(266deg);
 }
 .ball .circleS-10::after {
   content: "";
