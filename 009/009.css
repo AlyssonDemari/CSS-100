@@ -22,25 +22,27 @@ body {
 
 .frame {
   background: #1A2238;
+  position: relative;
+  overflow: hidden;
 }
 
 .container-moon {
-  border: 2px solid red;
   position: relative;
+  align-self: flex-end;
   width: 100%;
   height: 75%;
   overflow: hidden;
 }
 .container-moon .moon {
   position: relative;
-  top: 30px;
-  left: 50px;
-  width: 4rem;
+  top: 2rem;
+  left: 3rem;
   height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   background: #F6EDBD;
   overflow: hidden;
-  box-shadow: 0px 0 10px #FFF;
+  box-shadow: 0 0 10px #FFF;
 }
 .container-moon .moon [class^=crater-] {
   border-radius: 50%;
@@ -160,6 +162,337 @@ body {
   left: 180px;
   background: #26314F;
   z-index: 0;
+}
+
+.rain {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  height: 10%;
+  width: 100%;
+  bottom: 70px;
+  z-index: 10;
+}
+.rain .drop-1, .rain .small-drop-1 {
+  position: relative;
+  top: 114;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.8s linear 0.12s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-1::before, .rain .small-drop-1::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-2, .rain .small-drop-2 {
+  position: relative;
+  top: 65;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.9s linear 1.24s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-2::before, .rain .small-drop-2::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-3, .rain .small-drop-3 {
+  position: relative;
+  top: 16;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.9s linear 1.52s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-3::before, .rain .small-drop-3::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-4, .rain .small-drop-4 {
+  position: relative;
+  top: 66;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.9s linear 1s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-4::before, .rain .small-drop-4::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-5, .rain .small-drop-5 {
+  position: relative;
+  top: 48;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.9s linear 1.08s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-5::before, .rain .small-drop-5::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-6, .rain .small-drop-6 {
+  position: relative;
+  top: 42;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.8s linear 1.08s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-6::before, .rain .small-drop-6::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-7, .rain .small-drop-7 {
+  position: relative;
+  top: 79;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.9s linear 1.28s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-7::before, .rain .small-drop-7::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-8, .rain .small-drop-8 {
+  position: relative;
+  top: 148;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 1.1s linear 1.56s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-8::before, .rain .small-drop-8::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-9, .rain .small-drop-9 {
+  position: relative;
+  top: 155;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.8s linear 1.8s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-9::before, .rain .small-drop-9::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .drop-10, .rain .small-drop-10 {
+  position: relative;
+  top: 125;
+  width: 10px;
+  height: 10px;
+  background: #7FC1F9;
+  border-radius: 50%;
+  animation: down 0.8s linear 1.08s infinite;
+  animation-fill-mode: both;
+}
+.rain .drop-10::before, .rain .small-drop-10::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 1px;
+  border-left: 7px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 10px solid #7FC1F9;
+  transform: rotate(15deg);
+}
+.rain .small-drop-1 {
+  width: 5px;
+  height: 5px;
+  animation: down 1s linear 0.8s infinite;
+}
+.rain .small-drop-1::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-2 {
+  width: 5px;
+  height: 5px;
+  animation: down 0.8s linear 0.2s infinite;
+}
+.rain .small-drop-2::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-3 {
+  width: 5px;
+  height: 5px;
+  animation: down 1.1s linear 0.84s infinite;
+}
+.rain .small-drop-3::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-4 {
+  width: 5px;
+  height: 5px;
+  animation: down 0.9s linear 1.04s infinite;
+}
+.rain .small-drop-4::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-5 {
+  width: 5px;
+  height: 5px;
+  animation: down 0.9s linear 0.4s infinite;
+}
+.rain .small-drop-5::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-6 {
+  width: 5px;
+  height: 5px;
+  animation: down 0.9s linear 0.92s infinite;
+}
+.rain .small-drop-6::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-7 {
+  width: 5px;
+  height: 5px;
+  animation: down 1s linear 1.6s infinite;
+}
+.rain .small-drop-7::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-8 {
+  width: 5px;
+  height: 5px;
+  animation: down 1.1s linear 1.04s infinite;
+}
+.rain .small-drop-8::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-9 {
+  width: 5px;
+  height: 5px;
+  animation: down 1.1s linear 1.32s infinite;
+}
+.rain .small-drop-9::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+.rain .small-drop-10 {
+  width: 5px;
+  height: 5px;
+  animation: down 1.1s linear 1.08s infinite;
+}
+.rain .small-drop-10::before {
+  top: -3px;
+  border-left: 3px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 5px solid #7FC1F9;
+}
+@keyframes down {
+  0% {
+    transform: translate3d(40px, -400px, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  85% {
+    transform: translate3d(0, 0, 0) scaleX(1) scaleY(1) rotate(17deg);
+  }
+  100% {
+    transform: translate3d(0px, 0, 0) scaleX(3) scaleY(0) rotate(0deg);
+  }
 }
 
 .info {
