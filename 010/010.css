@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,600,500,400,700,800);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  background: #4C4C4C;
+  font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+.circle {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  background: #242424;
+  border: 8px solid #3A3A3A;
+}
+
+.container-circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.container-circle .day, .container-circle .heart, .container-circle .clock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: center;
+  color: #FFF;
+  width: 50%;
+  font-size: 0.5rem;
+}
+.container-circle .day h1, .container-circle .heart h1, .container-circle .clock h1 {
+  font-weight: 500;
+}
+.container-circle .clock h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.container-circle .heart {
+  justify-content: space-between;
+  display: inline-flex;
+}
+.container-circle .heart p {
+  font-size: 0.8rem;
+}
+.container-circle .heart p i {
+  color: #F85B5B;
+  margin-right: 0.2rem;
+  animation: beat 1.5s linear infinite;
+}
+.container-circle .points {
+  position: absolute;
+  border: 2px dashed #979797;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+}
+.container-circle .spinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container-circle .spinner svg {
+  width: 100%;
+  height: 100%;
+  stroke: #F85B5B;
+  stroke-width: 3;
+  fill: none;
+}
+.container-circle .spinner .animation-line {
+  stroke-dasharray: 700;
+  animation: rotate 5s linear infinite;
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
+@keyframes rotate {
+  0% {
+    stroke-dashoffset: 700;
+    transform: rotate(-90deg) scaleY(1);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg) scaleY(1);
+  }
+  50.001% {
+    stroke-dashoffset: 0;
+    transform: rotate(-90deg) scaleY(-1);
+  }
+  100% {
+    stroke-dashoffset: 700;
+    transform: rotate(-90deg) scaleY(-1);
+  }
+}
+@keyframes beat {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.2);
+  }
+}/*# sourceMappingURL=010.css.map */

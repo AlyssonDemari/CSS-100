@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,600,500,400,700,800);
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,800);
 * {
   margin: 0;
@@ -25,6 +25,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: row;
   background: #264057;
   font-family: "Open Sans", sans-serif;
@@ -83,6 +84,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: row;
   background: #5F98CD;
   height: 20%;
@@ -91,6 +93,7 @@ header nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   flex-direction: row;
   width: 100%;
   color: #FFFFFF;
@@ -166,6 +169,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: row;
   position: relative;
   height: 80%;
@@ -185,6 +189,7 @@ main .container-comments {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   font-size: 0.5rem;
   height: 80%;

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,600,500,400,700,800);
 
 *{
     margin: 0;
@@ -25,9 +25,10 @@ body{
     font-family: 'Courier New', 'Courier', sans-serif;
 }
 
-@mixin center( $direction: row, $justify: center){
+@mixin center( $direction: row, $justify: center, $align: center){
     display: flex;
     justify-content: $justify;
     align-items: center;
+    text-align: $align;
     flex-direction: $direction;
 }

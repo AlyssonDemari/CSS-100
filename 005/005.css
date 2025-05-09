@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:600,400,800);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,600,500,400,700,800);
 * {
   margin: 0;
   padding: 0;
@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: row;
   background: #42A7A1;
 }
