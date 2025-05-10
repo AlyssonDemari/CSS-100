@@ -1,0 +1,69 @@
+@import "../standard";
+
+$bg: radial-gradient(ellipse at center,  rgba(246,232,215,1) 0%,rgba(218,190,155,1) 100%);
+$ground: #232323;
+
+
+.frame{
+    background: $bg;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    @include center(column, flex-end);
+    width: 100%;
+    height: 100%;
+
+    .cont-shoe{
+        position: absolute;
+        top: 0;
+        left: -200px;
+        animation: fade 2.5s linear 2s forwards;
+
+        .left, .right{
+            position: absolute;
+            top: 6.5rem;
+    
+            animation: move 2s linear 1s infinite;
+        }
+    
+        .right{
+            animation: move 2s linear 2s infinite;
+        }
+    }
+
+
+
+
+    .ground{
+        background: $ground;
+        width: 100%;
+        height: 40%;
+        border-radius: 0 0 8px 8px;
+    }
+}
+
+@keyframes move{
+    0%, 100% {
+        transform: translate(0.625rem, 0.3125rem) rotate(10deg);
+      }
+      25% {
+        transform: translate(-3.75rem, -1.875rem) rotate(30deg);
+      }
+      50% {
+        transform: translate(1.875rem, -1.875rem) rotate(-30deg);
+      }
+      75% {
+        transform: translate(5.625rem, 0.3125rem) rotate(0deg);
+      }
+}
+
+@keyframes fade{
+    0%{
+        left: -200px;
+    }
+    100%{
+        left: 100px;
+    }
+}
