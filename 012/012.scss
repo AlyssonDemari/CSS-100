@@ -1,0 +1,122 @@
+@import "../standard";
+
+$bg: #4CB6DE;
+$hover: #286F8A;
+$quote: #6AC2E3;
+
+.frame{
+    background: $bg;
+}
+
+.container{
+    @include center(column);
+    padding: 2rem;
+    border: 2px solid red;
+    width: 100%;
+    height: 100%;
+    color: $white;
+
+    blockquote {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5em;
+        border: 2px solid rgb(197, 255, 192);
+        text-align: start;
+        line-height: 2.6rem;
+        z-index: 1;
+        height:80%;
+        width: 97%;
+
+        .tooltip-container{
+            position: relative;
+            display: inline;
+            cursor: pointer;
+            background: $hover;
+            padding: .3rem;
+            margin: .3rem;
+
+            .tooltip-text {
+                    position: absolute;
+                    top: -10rem;
+                    left: -5rem;
+                    width: 18rem;
+                    background-color: $hover;
+                    color: $white;
+                    font-size: .9rem;
+                    line-height: 1.5rem;
+                    transition: all 0.3s;
+                border: 2px solid red;
+                // visibility: hidden;
+                // opacity: 0;
+                
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: $hover transparent transparent transparent;
+                }
+
+                .tooltip-title{
+                    padding: .3rem;
+                    font-size: 1.1rem;
+                    background: $white;
+                    color: $hover;
+                    transition: all 0.3s;
+                    cursor: text;
+                    border: 2px solid yellow;
+
+                    i{
+                        font-size: 1rem;
+
+                        &:hover{
+                            color: $hover;
+                            scale: 1.2;
+                            transition: all 0.3s;
+                            cursor: pointer;
+                        }
+                    }
+                }
+
+                .tooltip-desc{
+                    padding: .5rem;
+                    border: 2px solid green;
+                }
+            }
+        }
+
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(20px);
+            transition: all 0.3s;
+        }
+    }
+
+
+    cite{
+        font-size: 1.2rem;
+        align-self: flex-start;
+    }
+}
+
+.quote {
+	position: absolute;
+	margin-top: 70px;
+	padding: 0 30px;
+	
+	&:before {
+		display: block;
+		position: absolute;
+		z-index: 0;
+		content: '„';
+		font-family: Arial;
+		font-size: 250px;
+		color: $quote;
+		line-height: 35px;
+		top: -100px;
+		left: 7px;
+	}
+}

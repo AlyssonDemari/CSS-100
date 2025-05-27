@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:100,600,500,400,700,800);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.frame {
+  width: 400px;
+  height: 400px;
+  border-radius: 8px;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Courier New", "Courier", sans-serif;
+}
+
+.frame {
+  background: #4CB6DE;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding: 2rem;
+  border: 2px solid red;
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+}
+.container blockquote {
+  font-family: "Lato", sans-serif;
+  font-size: 1.5em;
+  border: 2px solid rgb(197, 255, 192);
+  text-align: start;
+  line-height: 2.6rem;
+  z-index: 1;
+  height: 80%;
+  width: 97%;
+}
+.container blockquote .tooltip-container {
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  background: #286F8A;
+  padding: 0.3rem;
+  margin: 0.3rem;
+}
+.container blockquote .tooltip-container .tooltip-text {
+  position: absolute;
+  top: -10rem;
+  left: -5rem;
+  width: 18rem;
+  background-color: #286F8A;
+  color: #FFF;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+  transition: all 0.3s;
+  border: 2px solid red;
+}
+.container blockquote .tooltip-container .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #286F8A transparent transparent transparent;
+}
+.container blockquote .tooltip-container .tooltip-text .tooltip-title {
+  padding: 0.3rem;
+  font-size: 1.1rem;
+  background: #FFF;
+  color: #286F8A;
+  transition: all 0.3s;
+  cursor: text;
+  border: 2px solid yellow;
+}
+.container blockquote .tooltip-container .tooltip-text .tooltip-title i {
+  font-size: 1rem;
+}
+.container blockquote .tooltip-container .tooltip-text .tooltip-title i:hover {
+  color: #286F8A;
+  scale: 1.2;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.container blockquote .tooltip-container .tooltip-text .tooltip-desc {
+  padding: 0.5rem;
+  border: 2px solid green;
+}
+.container blockquote .tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(20px);
+  transition: all 0.3s;
+}
+.container cite {
+  font-size: 1.2rem;
+  align-self: flex-start;
+}
+
+.quote {
+  position: absolute;
+  margin-top: 70px;
+  padding: 0 30px;
+}
+.quote:before {
+  display: block;
+  position: absolute;
+  z-index: 0;
+  content: "„";
+  font-family: Arial;
+  font-size: 250px;
+  color: #6AC2E3;
+  line-height: 35px;
+  top: -100px;
+  left: 7px;
+}/*# sourceMappingURL=012.css.map */
