@@ -32,7 +32,6 @@ body {
   text-align: center;
   flex-direction: column;
   padding: 2rem;
-  border: 2px solid red;
   width: 100%;
   height: 100%;
   color: #FFF;
@@ -40,7 +39,6 @@ body {
 .container blockquote {
   font-family: "Lato", sans-serif;
   font-size: 1.5em;
-  border: 2px solid rgb(197, 255, 192);
   text-align: start;
   line-height: 2.6rem;
   z-index: 1;
@@ -60,12 +58,12 @@ body {
   top: -10rem;
   left: -5rem;
   width: 18rem;
-  background-color: #286F8A;
-  color: #FFF;
+  background: #286F8A;
   font-size: 0.9rem;
   line-height: 1.5rem;
-  transition: all 0.3s;
-  border: 2px solid red;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 .container blockquote .tooltip-container .tooltip-text::after {
   content: "";
@@ -77,53 +75,49 @@ body {
   border-style: solid;
   border-color: #286F8A transparent transparent transparent;
 }
-.container blockquote .tooltip-container .tooltip-text .tooltip-title {
+.container blockquote .tooltip-container .tooltip-title {
   padding: 0.3rem;
   font-size: 1.1rem;
   background: #FFF;
   color: #286F8A;
-  transition: all 0.3s;
   cursor: text;
-  border: 2px solid yellow;
+  transition: all 0.3s ease-in-out;
 }
-.container blockquote .tooltip-container .tooltip-text .tooltip-title i {
+.container blockquote .tooltip-container .tooltip-title i {
   font-size: 1rem;
 }
-.container blockquote .tooltip-container .tooltip-text .tooltip-title i:hover {
+.container blockquote .tooltip-container .tooltip-title i:hover {
   color: #286F8A;
-  scale: 1.2;
-  transition: all 0.3s;
   cursor: pointer;
+  scale: 1.2;
+  transition: all 0.3s ease-in-out;
 }
-.container blockquote .tooltip-container .tooltip-text .tooltip-desc {
+.container blockquote .tooltip-container .tooltip-desc {
   padding: 0.5rem;
-  border: 2px solid green;
 }
 .container blockquote .tooltip-container:hover .tooltip-text {
-  visibility: visible;
   opacity: 1;
-  transform: translateY(20px);
-  transition: all 0.3s;
+  visibility: visible;
+  transform: translateY(1.3rem);
+  transition: all 0.3s ease-in-out;
 }
-.container cite {
+.container figcaption {
   font-size: 1.2rem;
   align-self: flex-start;
 }
 
 .quote {
   position: absolute;
-  margin-top: 70px;
-  padding: 0 30px;
+  padding: 0 2rem;
 }
-.quote:before {
+.quote::before {
   display: block;
   position: absolute;
-  z-index: 0;
+  top: -1rem;
+  left: 0.5rem;
   content: "„";
   font-family: Arial;
-  font-size: 250px;
+  font-size: 15rem;
   color: #6AC2E3;
-  line-height: 35px;
-  top: -100px;
-  left: 7px;
+  line-height: 0rem;
 }/*# sourceMappingURL=012.css.map */
