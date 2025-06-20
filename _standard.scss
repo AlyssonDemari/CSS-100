@@ -25,10 +25,11 @@ body{
     font-family: 'Courier New', 'Courier', sans-serif;
 }
 
-@mixin center( $direction: row, $justify: center, $align: center){
+@mixin center( $direction: row, $justify: center, $align: center, $wrap: nowrap ){
     display: flex;
     justify-content: $justify;
     align-items: center;
     text-align: $align;
     flex-direction: $direction;
+    flex-wrap: $wrap;
 }

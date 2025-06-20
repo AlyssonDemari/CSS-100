@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="015.css">
+</head>
+<body>
+	<section class="frame">
+		<div class="container">
+			<header>
+				<h1>Drop file to upload</h1>
+				<svg class="line">
+					<line x1="0" y1="51" x2="300" y2="51"/>
+				</svg>
+			</header>
+			<div class="drop-zone">
+				<div class="drop-zone__home">
+					<input type="file" id="upload" name="upload" hidden>
+
+					<label for="upload">
+						<img src="https://100dayscss.com/codepen/upload.svg" class="img-upload">
+					</label>
+
+					<span id="file-name" class="file-info">
+		
+					</span>
+				</div>
+				<div class="drop-zone__load">
+					<img src="https://100dayscss.com/codepen/syncing.svg" class="syncing">
+					<img src="https://100dayscss.com/codepen/checkmark.svg" class="done">
+				</div>
+				<button class="uploader">Upload File</button>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const inputArquivo = document.getElementById('upload');
+		const nomeArquivoSpan = document.getElementById('file-name');
+		const img = document.querySelector('.img-upload');
+		const fileInfo = document.querySelector('.file-info');
+
+
+		const container = document.querySelector('.container');
+		const uploader = document.querySelector('.uploader');
+		const line = document.querySelector('.line');
+		const done = document.querySelector('.done');
+		const syncing = document.querySelector('.syncing');
+		const erro = document.querySelector('erro')
+
+		inputArquivo.addEventListener('change', function() {
+			// this.files é uma lista de arquivos selecionados. 
+			if (this.files.length > 0 ) {
+				nomeArquivoSpan.textContent = this.files[0].name;
+				img.style.display = 'none';
+				fileInfo.style.display = 'block';
+			}
+		});
+
+		uploader.addEventListener('click', function() {
+	
+			if (inputArquivo.files.length === 0) {
+
+				alert('Coloque uma imagem')
+				return; // Para a execução da função aqui
+			}
+			container.classList.add('uploading');
+			line.classList.add('active');
+
+			setTimeout(() => {
+				container.classList.add('uploaded')
+				uploader.innerHTML = 'DONE';
+			}, 2000);
+		});
+	</script>
+</body>
+</html>

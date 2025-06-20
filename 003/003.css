@@ -26,6 +26,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   height: 100%;
   background: #272C34;
   border-radius: 8px;

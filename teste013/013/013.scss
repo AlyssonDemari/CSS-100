@@ -116,7 +116,7 @@ $icon: #EC6565;
 		border-radius: 50%;
 		cursor: pointer;
 		transition: all .3s ease-in;
-        
+
 		&.active{
 			transform: translate(0%, 20%);
 			transition: all .9s ease-out .6s;
@@ -159,13 +159,6 @@ $icon: #EC6565;
 			color: $white;
 			padding: .8rem;
 			border-radius: 50%;
-
-            &:hover{
-                background: $white;
-                color: $icon;
-                transition: all .5s ease-in-out;
-                cursor: pointer;
-            }
 		}
 	}
 }

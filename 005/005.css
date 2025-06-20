@@ -26,6 +26,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   background: #42A7A1;
 }
 

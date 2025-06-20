@@ -27,6 +27,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   background: linear-gradient(45deg, #EEBE6C 0%, #CA7C4E 100%);
   font-family: "Open Sans", Helvetica, sans-serif;
 }
@@ -46,6 +47,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
   width: 65%;
   height: 100%;
 }
@@ -55,6 +57,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
 }
 .profile .picture h1 {
   font-size: 0.9rem;
@@ -110,6 +113,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
   gap: 10px;
 }
 .profile .buttons button {
@@ -135,6 +139,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
   width: 35%;
   height: 100%;
 }
@@ -144,6 +149,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
   background: #F5E8DF;
   width: 100%;
   height: 33%;
