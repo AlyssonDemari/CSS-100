@@ -1,0 +1,91 @@
+@import "../standard";
+
+$bg: #353535;
+$light-grey: #aaa;
+$grey: #eee;
+$dark-grey: #ccc;
+
+.frame{
+	@include center();
+	position: relative;
+	overflow: hidden;
+}
+
+.container{
+	
+	&__bg{
+		@include center();
+		width:15rem;
+		height: 15rem;
+		background: $bg;
+		z-index: 999;
+		position: relative;
+	}
+}
+
+.cont-lines{
+	width: 40rem;
+	height: 36rem;
+	z-index: 1;
+
+	position: absolute;
+	top: -7rem;
+	left: -6rem;
+	rotate: -45deg;	
+	animation:  rotate 30s infinite alternate;
+	
+	@for $i from 1 through 26 {
+		.line-#{$i} {
+			width: .2rem;
+			height: 100%;
+			background: black;
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-left: 95% * ($i / 26);	
+		}
+	}
+}
+
+
+	
+	.light {
+		fill: $light-grey;
+		transition: all .5s ease-in-out;
+	}
+	.middle {
+		fill: $grey;
+		transition: all .5s ease-in-out;
+	}
+	.dark {
+		fill:$dark-grey;
+		transition: all .5s ease-in-out;
+	}
+
+.polygon {
+	width: 160px;
+	height: 140px;
+	transition: all 1s ease-in-out;
+
+	&:hover .light{
+		fill: $grey;
+				transition: all 1s ease-in-out;
+	}
+	&:hover .middle{
+		fill: $dark-grey;
+				transition: all 1s ease-in-out;
+	}
+	&:hover .dark{
+		fill: $light-grey;
+		transition: all 1s ease-in-out;
+	}
+}
+
+@keyframes rotate {
+	to{
+		transform: translate(0%, 0%);
+	}
+	from{
+		transform: translate(-10%, 0%);
+	}
+}

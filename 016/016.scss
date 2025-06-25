@@ -1,0 +1,273 @@
+@import "../standard";
+
+$bg: #46A6DA;
+$width: 8rem;
+$height: 8rem;
+
+.frame{
+	@include center();
+	background: $bg;
+}
+
+.container{
+	@include center();
+	// border: 2px solid red;
+	width: 50%;
+	height: 50%;
+
+	.container-circle{
+		position: absolute;
+		width: $width;
+		height: $height;
+		//display: none;
+
+		&__circle{
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			background: $white;
+			animation: blobby 10s infinite;
+		}
+
+		&__ring{
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 50%;
+			border: 2px solid $white;
+			scale: 1.2;
+			animation: blobby-ring 10s infinite;
+		}
+	}
+
+	.container-octagon{
+		position: absolute;
+		@include center();
+		width: 7rem;
+		height: $height;
+		//display: none;
+		
+		&__octagon{
+			fill: $white;
+			transform: rotate(22deg);
+			animation: octa 10s infinite;
+		}
+
+		.sparkles{
+			position: absolute;
+			width: $width +4rem;
+			height: $height +4rem;
+			//border: 2px solid red;
+			animation: octa-sparkle 10s infinite;
+
+			&__sparkle {
+				position: absolute;
+				top: 0;
+				left: 49%;
+				width: .1rem;
+				height: 11.8rem;
+				
+				&:before, &:after {
+					display: block;
+					content: '';
+					position: absolute;
+					width: .2rem;
+					height: 1.5rem;
+					top: 0;
+					left: 0;
+					border-radius: 2px;
+					background: #fff;
+				}
+				
+				&:after {
+					bottom: 0;
+					top: auto;
+				}
+			}
+
+			.s2{
+				transform: rotate(45deg);
+			}
+			.s3{
+				transform: rotate(90deg);
+			}
+			.s4{
+				transform: rotate(-45deg);
+			}
+
+
+		}
+	}
+	
+	.container-triangle{
+		position: absolute;
+		@include center();
+		width: $width;
+		height: $height;
+		//border: 2px solid red;
+		//display: none;
+
+		&__triangle{
+			fill: $white;
+			animation: triangle 10s infinite;
+		}
+
+		.sparkles{
+			position: absolute;
+			width: $width +4rem;
+			height: $height +4rem;
+			//border: 2px solid red;
+			animation: triangle-sparkle 10s infinite;
+
+			&__sparkle {
+				width: .1rem;
+				height: 2rem;
+				background: $white;
+			}
+
+			.s1{
+				position: absolute;
+				top: 9.5rem;
+				left: .5rem;
+				transform: rotate(50deg);
+			}
+			.s2{
+				position: absolute;
+				top: 9.5rem;
+				right: .5rem;
+				transform: rotate(-50deg);
+			}
+			.s3{
+				position: absolute;
+				top: 0rem;
+				left: 49%;
+				width: .2rem;
+			}
+
+		}
+	}
+}
+
+@keyframes blobby {
+    0% {
+        transform: translate3d(0, -18.75rem, 0) scaleY(1.2); 
+    }
+    10% {
+        transform: translate3d(0, 3.125rem, 0) scaleY(0.8);
+    }
+    14% {
+        transform: translate3d(0, -1.875rem, 0) scaleY(1.1); 
+    }
+    18% {
+        transform: translate3d(0, 0.625rem, 0) scaleY(0.9);
+    }
+    20%, 22% {
+        transform: translate3d(0,0,0) scaleY(1);
+    }
+    26% {
+        transform: translate3d(0,0,0) scale(1.2);
+    }
+    32%,74% {
+        transform: translate3d(0,0,0) scale(0);
+    }
+    80% {
+        transform: translate3d(0,0,0) scale(1.2);
+    }
+    84% {
+        transform: translate3d(0,0,0) scale(0.9);
+    }
+    86%, 88% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+    92% {
+        transform: translate3d(0, -1.875rem, 0) scaleY(0.9); 
+    }
+    100% {
+        transform: translate3d(0, 18.75rem, 0) scaleY(1.2); 
+    }
+}
+
+@keyframes blobby-ring {
+    0%, 74% {
+        transform: translate3d(0,0,0) scale(0);
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    84%, 100% {
+        transform: translate3d(0,0,0) scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes octa {
+    0%, 30% {
+        transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
+    }
+    36% {
+        transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
+    }
+    40% {
+        transform: translate3d(0,0,0) scale(0.9) rotate(22.5deg);
+    }
+    42%, 44% {
+        transform: translate3d(0,0,0) scale(1) rotate(22.5deg);
+    }
+    48% {
+        transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
+    }
+    54%, 100% {
+        transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
+    }
+}
+
+@keyframes octa-sparkle {
+    0%, 30% {
+        transform: translate3d(0,0,0) scale(0);
+        opacity: 1;
+    }
+    36% {
+        opacity: 1;
+    }
+    40%, 100% {
+        transform: translate3d(0,0,0) scale(1.4);
+        opacity: 0;
+    }
+}
+
+@keyframes triangle {
+    0%, 52% {
+        transform: translate3d(0,0,0) scale(0);
+    }
+    58% {
+        transform: translate3d(0,0,0) scale(1.2);
+    }
+    62% {
+        transform: translate3d(0,0,0) scale(0.9);
+    }
+    64%, 66% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+    70% {
+        transform: translate3d(0,0,0) scale(1.2);
+    }
+    76%, 100% {
+        transform: translate3d(0,0,0) scale(0);
+    }
+}
+
+@keyframes triangle-sparkle {
+    0%, 52% {
+        transform: translate3d(0,0,0) scale(0);
+        opacity: 1;
+    }
+    58% {
+        opacity: 1;
+    }
+    62%, 100% {
+        transform: translate3d(0,0,0) scale(1.4);
+        opacity: 0;
+    }
+}
