@@ -30,6 +30,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 .cont-move {
@@ -38,6 +39,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   transition: 0.5s ease-in-out;
 }
 .cont-move .cont-purple, .cont-move .cont-blue, .cont-move .cont-green {
@@ -63,6 +65,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   gap: 0.5rem;
 }
 .radio input[type=radio] {

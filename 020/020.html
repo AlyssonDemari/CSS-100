@@ -29,29 +29,29 @@
 	</section>
 
 	<script>
-		const button = document.querySelector('.container__send');
-		const buttonReset = document.querySelector('.container__reset');
-		const mail = document.querySelector('.mail');
-		const plane = document.querySelector('.plane');
-		const circle = document.querySelector('.circle');
-		const ring = document.querySelector('.circle-ring');
+		const sendButton = document.querySelector('.container__send');
+		const resetButton = document.querySelector('.container__reset');
 
-		button.addEventListener('click', () => {
-			mail.classList.add('active'); // Correto
-			plane.classList.add('active'); // Correto
-			button.classList.add('active'); // Correto
-			buttonReset.classList.add('active'); // Correto
-			circle.classList.add('active'); // Correto
-			ring.classList.add('active'); // Correto
+		// Agrupa todos os elementos que serão animados
+		const animatedElements = [
+			document.querySelector('.mail'),
+			document.querySelector('.plane'),
+			sendButton,
+			resetButton,
+			document.querySelector('.circle'),
+			document.querySelector('.circle-ring')
+		];
+
+		sendButton.addEventListener('click', () => {
+			animatedElements.forEach(element => {
+				element.classList.add('active');
+			});
 		});
 
-		buttonReset.addEventListener('click', () => {
-			mail.classList.remove('active'); // Correto
-			plane.classList.remove('active'); // Correto
-			button.classList.remove('active'); // Correto
-			buttonReset.classList.remove('active'); // Correto
-			circle.classList.remove('active'); // Correto
-			ring.classList.remove('active'); // Correto
+		resetButton.addEventListener('click', () => {
+			animatedElements.forEach(element => {
+				element.classList.remove('active');
+			});
 		});
 	</script>
 </body>

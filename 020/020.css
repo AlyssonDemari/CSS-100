@@ -27,6 +27,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 .container {
@@ -37,6 +38,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: column;
+  flex-wrap: nowrap;
   gap: 2rem;
 }
 .container__buttons {
@@ -46,6 +48,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 .container__send, .container__reset {
   position: absolute;
@@ -88,6 +91,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 12rem;
   height: 12rem;
   border-radius: 50%;

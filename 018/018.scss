@@ -17,28 +17,26 @@ $grey: #444444;
 	.card{
 		width: 100%;
 		height: 100%;
-		transition: transform 0.6s;
-		transform-style: preserve-3d; /* Mantém os filhos no espaço 3D */
+		transition: transform .6s;
+		transform-style: preserve-3d; // Mantém os filhos no espaço 3D
 		position: relative;
 		z-index: 999;
 		animation: pump 8s linear infinite;
 
-
 		&__front,
-		&__back {
+		&__back{
 			width: 100%;
 			height: 100%;
-			position: absolute; 
-			backface-visibility: hidden; /* Esconde a face de trás */
+			position: absolute;
+			backface-visibility: hidden; // Esconde a face de trás 
 			border-radius: 50%;
 		}
 
-		&__front {
-			background-color: $green;
+		&__front{
+			background: $green;
 		}
-
-		&__back {
-			background-color: $grey;
+		&__back{
+			background: $grey;
 			transform: rotateY(180deg);
 		}
 	}
@@ -50,8 +48,9 @@ $grey: #444444;
 		position: absolute;
 		top: 0;
 		left: 0;
-		border-radius: .3rem .3rem 0 0 ;
+		border-radius: .3rem .3rem 0 0;
 	}
+
 	.grey{
 		width: 100%;
 		height: 50%;
@@ -61,11 +60,10 @@ $grey: #444444;
 		left: 0;
 		border-radius: 0 0 .3rem .3rem;
 	}
-
 }
 
 @keyframes pump{
-	0% {
+	0%{
 		transform: rotateX(90deg);
 	}
 	10%{
@@ -92,7 +90,7 @@ $grey: #444444;
 	45%{
 		transform: rotateX(90deg);
 	}
-	50% {
+	50%{
 		transform: rotateX(110deg);
 	}
 	55%{
