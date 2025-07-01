@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="020.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="020.css">
 </head>
 <body>
-    <section class="frame">
-        <div class="container">
-            <svg class="icon mail">
-		        <polyline points="119,1 119,69 1,69 1,1"></polyline>
-		        <polyline points="119,1 60,45 1,1 119,1"></polyline>
-            </svg>
-            <svg class="icon plane">
-                <polyline points="119,1 1,59 106,80 119,1"></polyline>
-                <polyline points="119,1 40,67 43,105 69,73"></polyline>
-            </svg>  
-        </div>
+	<section class="frame">
+		<div class="container">
+			<div class="container-mail">
+				<div class="circle"></div>
+				<div class="circle-ring"></div>
+				<svg class="icon mail" viewBox="0 0 120 70">
+					<polyline points="119,1 119,69 1,69 1,1"></polyline>
+					<polyline points="119,1 60,45 1,1 119,1"></polyline>
+				</svg>
+				<svg class="icon plane" viewBox="0 0 110 120">
+					<polyline points="119,1 1,59 106,80 119,1"></polyline>
+					<polyline points="119,1 40,67 43,105 69,73"></polyline>
+				</svg>
+			</div>
+			<div class="container__buttons">
+				<button class="container__send">SEND MAIL</button>
+				<button class="container__reset">RESET</button>
+			</div>
+		</div>
+	</section>
 
-        
-    </section>
-    <button>teste</button>
-    <script>
-        const button = document.querySelector('button');
-        const mail = document.querySelector('.mail');
-        const plane = document.querySelector('.plane');
+	<script>
+		const button = document.querySelector('.container__send');
+		const buttonReset = document.querySelector('.container__reset');
+		const mail = document.querySelector('.mail');
+		const plane = document.querySelector('.plane');
+		const circle = document.querySelector('.circle');
+		const ring = document.querySelector('.circle-ring');
 
-        button.addEventListener('click', function(){
-            mail.classList.toggle('active');
-            plane.classList.toggle('active');
-        });
-    </script>
+		button.addEventListener('click', () => {
+			mail.classList.add('active'); // Correto
+			plane.classList.add('active'); // Correto
+			button.classList.add('active'); // Correto
+			buttonReset.classList.add('active'); // Correto
+			circle.classList.add('active'); // Correto
+			ring.classList.add('active'); // Correto
+		});
+
+		buttonReset.addEventListener('click', () => {
+			mail.classList.remove('active'); // Correto
+			plane.classList.remove('active'); // Correto
+			button.classList.remove('active'); // Correto
+			buttonReset.classList.remove('active'); // Correto
+			circle.classList.remove('active'); // Correto
+			ring.classList.remove('active'); // Correto
+		});
+	</script>
 </body>
 </html>

@@ -3,49 +3,205 @@
 $bg: #2C3E50;
 $bg-circle: #354A5F;
 $button: #ECF0F1;
+$button-hover: #1abc9c;
 
 .frame{
-    @include center();
-    background: $bg;
+	background: $bg;
+	@include center();
+
 }
 
 .container{
-    position: relative;
-}
+	// border: 2px solid red;
+	width: 100%;
+	height:100%;
+	@include center(column);
+	gap: 2rem;
 
-.icon {
-	position: absolute;
-	z-index: 2;
-	top: 0px;
-	left: 0px;
-	transform: translate3d(0,0,0);
-	fill: none;
-	stroke-width: 2px;
-	stroke: #ecf0f1;
-	stroke-linecap: square;
-	stroke-dasharray: 325 325;
-	
-	&.mail {
-		width: 120px;
-		height: 70px;
-		stroke-dashoffset: 0;
-        transition: stroke-dashoffset 1s ease-in-out;
-
-
-        &.active{
-            stroke-dashoffset: 326;
-	        transition: stroke-dashoffset 1s ease-in-out;
-        }
+	&__buttons{
+		position: relative;
+		@include center();
 	}
 
-    &.plane {
-		width: 120px;
-		height: 110px;	
-		stroke-dashoffset: 325;
+	&__send{
+		position: absolute;
+		width: 10rem;
+		height: 2.5rem;
+		border-radius: 2rem;
+		border: none;
+		font-size: 1rem;
+		font-weight: 600;
+		color: $bg;
+		transition: all .5s;
+		
+		&:hover{
+			background: $button-hover;
+			color: $button;
+			transition: all .5s;
+			cursor: pointer;
+		}
+		
+		&.active{
+			animation: button 1s ease-in-out 2.8s forwards;
+		}
+	}
 
-        &.active{
-            stroke-dashoffset: 0;
-            transition: stroke-dashoffset 1s ease-in-out .6s;
-        }
+	&__reset{
+		@extend .container__send;
+		opacity: 0;
+		visibility: hidden;
+
+		
+		&:hover{
+			background: $button-hover;
+			color: $button;
+			transition: all .5s;
+			cursor: pointer;
+		}
+
+		&.active{
+			animation: buttonReset 1s ease-in-out 5s forwards;
+			display: block
+		}
+
+	}
+}
+
+.container-mail{
+	@include center();
+	width: 12rem;
+	height: 12rem;
+	border-radius: 50%;
+	//border: 2px solid red;	
+
+	.circle{
+		width: 12rem;
+		height: 12rem;
+		position: absolute;
+		border-radius: 50%;
+		background: $bg-circle;
+			
+		&.active{
+			animation: circle .8s ease-in-out .5s forwards;
+		}
+	}
+
+	.circle-ring{
+		width: 12rem;
+		height: 12rem;
+		position: absolute;
+		border-radius: 50%;
+		border: 2px solid $bg-circle;
+
+		&.active{
+			animation: circle 1s ease-in-out forwards;
+		}
+	}
+
+	.icon {
+		fill: none;
+		stroke-width: 2px;
+		stroke: $white;
+		stroke-linecap: square;
+		stroke-dasharray: 325 325;
+		z-index: 999;
+		
+		&.mail {
+			width: 120px;
+			height: 70px;
+			stroke-dashoffset: 0;
+
+			&.active {
+				stroke-dashoffset: 326;
+				transition: stroke-dashoffset 1s ease-in-out;
+			}
+		}
+
+		&.plane{
+			position: absolute;
+			width: 120px;
+			height: 110px;
+			stroke-dashoffset: 326;
+			// border: 2px solid red;
+
+			&.active {
+				stroke-dashoffset: 0;
+				transition: stroke-dashoffset 1s ease-in-out .6s;
+				animation: fly 2.5s cubic-bezier(0.42, 0, 0.58, 1) 1.5s forwards;
+			}
+		}
+	}
+}
+
+@keyframes fly{
+	0%{
+		transform: translate(0rem, 0rem);
+	}
+	30%{
+		transform: translate(-2rem, 2rem);
+	}
+	50%{
+		transform: translate(20rem, -8rem) scale(0.5);
+	}
+	100%{
+		transform: translate(20rem, -8rem) scale(0.5);
+		opacity: 0;
+	}
+}
+
+@keyframes button{
+	0% {
+    transform: scale(1);
+    opacity: 1;
+
+  	}
+	50%, 70% {
+		transform: scale(0.5, 1);
+		border-radius: 50%;
+		width: 5rem;
+		font-size: 0;
+		background: $button-hover;
+		opacity: 1;
+	}
+	100% {
+		transform: scale(0);
+		opacity: 0;
+		font-size: 0;
+		border-radius: 50%;
+	}
+}
+
+@keyframes buttonReset{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+		font-size: 0;
+		border-radius: 50%;
+		visibility: visible;
+	}
+	50% {
+		transform: scale(0.5, 1);
+		border-radius: 50%;
+		width: 5rem;
+		font-size: 0;
+		background: $button-hover;
+		opacity: 1;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes circle{
+	0% {
+		transform: translate3d(0,0,0) scale(1);
+	}
+	20% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0);
 	}
 }
