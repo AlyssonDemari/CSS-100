@@ -1,0 +1,51 @@
+@import "../standard";
+
+$bg: #2C3E50;
+$bg-circle: #354A5F;
+$button: #ECF0F1;
+
+.frame{
+    @include center();
+    background: $bg;
+}
+
+.container{
+    position: relative;
+}
+
+.icon {
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+	transform: translate3d(0,0,0);
+	fill: none;
+	stroke-width: 2px;
+	stroke: #ecf0f1;
+	stroke-linecap: square;
+	stroke-dasharray: 325 325;
+	
+	&.mail {
+		width: 120px;
+		height: 70px;
+		stroke-dashoffset: 0;
+        transition: stroke-dashoffset 1s ease-in-out;
+
+
+        &.active{
+            stroke-dashoffset: 326;
+	        transition: stroke-dashoffset 1s ease-in-out;
+        }
+	}
+
+    &.plane {
+		width: 120px;
+		height: 110px;	
+		stroke-dashoffset: 325;
+
+        &.active{
+            stroke-dashoffset: 0;
+            transition: stroke-dashoffset 1s ease-in-out .6s;
+        }
+	}
+}

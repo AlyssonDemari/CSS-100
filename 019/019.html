@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="019.css">
+</head>
+<body>
+	<section class="frame">
+		<div class="container">
+			<div class="cont-move active">
+				<div class="cont-purple"></div>
+				<div class="cont-blue"></div>
+				<div class="cont-green"></div>
+			</div>
+
+			<div class="radio">
+				<label class="circle" for="radioPurple"></label>
+				<input type="radio" name="radio" id="radioPurple" class="radio-option"
+					data-cont-move="25rem"
+					data-circle-transform="-3.8rem" checked>
+
+				<label class="circle" for="radioBlue"></label>
+				<input type="radio" name="radio" id="radioBlue" class="radio-option"
+					data-cont-move="0"
+					data-circle-transform="0">
+
+				<label class="circle" for="radioGreen"></label>
+				<input type="radio" name="radio" id="radioGreen" class="radio-option"
+					data-cont-move="-25rem"
+					data-circle-transform="3.6rem">
+
+				<div class="circleRadio"></div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		const contMove = document.querySelector('.cont-move');
+		const circleRadio = document.querySelector('.circleRadio');
+		const radioContainer = document.querySelector('.radio');
+
+		function updatePosition(clickedRadio) {
+			const contMoveValue = clickedRadio.dataset.contMove;
+			const circleRadioValue = clickedRadio.dataset.circleTransform;
+
+			contMove.style.transform = `translateX(${contMoveValue})`;
+			circleRadio.style.transform = `translateX(${circleRadioValue})`;
+		}
+
+		radioContainer.addEventListener('click', (event) => {
+			// 'event.target' é o elemento exato que recebeu o clique dentro do contêiner.
+			const clickedElement = event.target;
+			if (clickedElement.classList.contains('radio-option')) {
+				updatePosition(clickedElement);
+			}
+		});
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const initiallyChecked = document.querySelector('.radio-option:checked');
+			if (initiallyChecked) {
+				updatePosition(initiallyChecked);
+			}
+		});
+	</script>
+</body>
+</html>

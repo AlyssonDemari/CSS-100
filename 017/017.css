@@ -26,6 +26,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   position: relative;
   overflow: hidden;
 }
@@ -36,27 +37,52 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 15rem;
   height: 15rem;
   background: #353535;
   z-index: 999;
   position: relative;
 }
+.container__polygon {
+  width: 10rem;
+  height: 8.5rem;
+}
+.container__polygon .light, .container__polygon .middle, .container__polygon .dark {
+  transition: fill 0.5s ease-in-out;
+}
+.container__polygon .light {
+  fill: #aaa;
+}
+.container__polygon .middle {
+  fill: #eee;
+}
+.container__polygon .dark {
+  fill: #ccc;
+}
+.container__polygon:hover .light {
+  fill: #eee;
+}
+.container__polygon:hover .middle {
+  fill: #ccc;
+}
+.container__polygon:hover .dark {
+  fill: #aaa;
+}
 
 .cont-lines {
   width: 40rem;
-  height: 36rem;
-  z-index: 1;
+  height: 40rem;
   position: absolute;
   top: -7rem;
-  left: -6rem;
+  left: -10rem;
   rotate: -45deg;
-  animation: rotate 30s infinite alternate;
+  animation: move 30s infinite alternate;
 }
 .cont-lines .line-1 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -65,7 +91,7 @@ body {
 .cont-lines .line-2 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -74,7 +100,7 @@ body {
 .cont-lines .line-3 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +109,7 @@ body {
 .cont-lines .line-4 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -92,7 +118,7 @@ body {
 .cont-lines .line-5 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -101,7 +127,7 @@ body {
 .cont-lines .line-6 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +136,7 @@ body {
 .cont-lines .line-7 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -119,7 +145,7 @@ body {
 .cont-lines .line-8 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -128,7 +154,7 @@ body {
 .cont-lines .line-9 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -137,7 +163,7 @@ body {
 .cont-lines .line-10 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -146,7 +172,7 @@ body {
 .cont-lines .line-11 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -155,7 +181,7 @@ body {
 .cont-lines .line-12 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -164,7 +190,7 @@ body {
 .cont-lines .line-13 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -173,7 +199,7 @@ body {
 .cont-lines .line-14 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -182,7 +208,7 @@ body {
 .cont-lines .line-15 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -191,7 +217,7 @@ body {
 .cont-lines .line-16 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -200,7 +226,7 @@ body {
 .cont-lines .line-17 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -209,7 +235,7 @@ body {
 .cont-lines .line-18 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -218,7 +244,7 @@ body {
 .cont-lines .line-19 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -227,7 +253,7 @@ body {
 .cont-lines .line-20 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -236,7 +262,7 @@ body {
 .cont-lines .line-21 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -245,7 +271,7 @@ body {
 .cont-lines .line-22 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -254,7 +280,7 @@ body {
 .cont-lines .line-23 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -263,7 +289,7 @@ body {
 .cont-lines .line-24 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -272,7 +298,7 @@ body {
 .cont-lines .line-25 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
@@ -281,51 +307,18 @@ body {
 .cont-lines .line-26 {
   width: 0.2rem;
   height: 100%;
-  background: black;
+  background: #111;
   position: absolute;
   top: 0;
   left: 0;
   margin-left: 95%;
 }
 
-.light {
-  fill: #aaa;
-  transition: all 0.5s ease-in-out;
-}
-
-.middle {
-  fill: #eee;
-  transition: all 0.5s ease-in-out;
-}
-
-.dark {
-  fill: #ccc;
-  transition: all 0.5s ease-in-out;
-}
-
-.polygon {
-  width: 160px;
-  height: 140px;
-  transition: all 1s ease-in-out;
-}
-.polygon:hover .light {
-  fill: #eee;
-  transition: all 1s ease-in-out;
-}
-.polygon:hover .middle {
-  fill: #ccc;
-  transition: all 1s ease-in-out;
-}
-.polygon:hover .dark {
-  fill: #aaa;
-  transition: all 1s ease-in-out;
-}
-
-@keyframes rotate {
+@keyframes move {
   to {
-    transform: translate(0%, 0%);
+    transform: translate(10%, 0);
   }
   from {
-    transform: translate(-10%, 0%);
+    transform: translate(0%, 0);
   }
 }/*# sourceMappingURL=017.css.map */

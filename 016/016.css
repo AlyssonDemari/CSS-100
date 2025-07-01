@@ -26,6 +26,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   background: #46A6DA;
 }
 
@@ -35,6 +36,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 50%;
   height: 50%;
 }
@@ -67,6 +69,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 7rem;
   height: 8rem;
 }
@@ -88,7 +91,7 @@ body {
   width: 0.1rem;
   height: 11.8rem;
 }
-.container .container-octagon .sparkles__sparkle:before, .container .container-octagon .sparkles__sparkle:after {
+.container .container-octagon .sparkles__sparkle::before, .container .container-octagon .sparkles__sparkle::after {
   display: block;
   content: "";
   position: absolute;
@@ -99,7 +102,7 @@ body {
   border-radius: 2px;
   background: #fff;
 }
-.container .container-octagon .sparkles__sparkle:after {
+.container .container-octagon .sparkles__sparkle::after {
   bottom: 0;
   top: auto;
 }
@@ -119,6 +122,7 @@ body {
   align-items: center;
   text-align: center;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 8rem;
   height: 8rem;
 }
@@ -151,7 +155,7 @@ body {
 }
 .container .container-triangle .sparkles .s3 {
   position: absolute;
-  top: 0rem;
+  top: 0;
   left: 49%;
   width: 0.2rem;
 }
@@ -241,7 +245,7 @@ body {
   }
 }
 @keyframes triangle {
-  0%, 52% {
+  0%, 54% {
     transform: translate3d(0, 0, 0) scale(0);
   }
   58% {

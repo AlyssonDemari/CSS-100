@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="020.css">
+</head>
+<body>
+    <section class="frame">
+        <div class="container">
+            <svg class="icon mail">
+		        <polyline points="119,1 119,69 1,69 1,1"></polyline>
+		        <polyline points="119,1 60,45 1,1 119,1"></polyline>
+            </svg>
+            <svg class="icon plane">
+                <polyline points="119,1 1,59 106,80 119,1"></polyline>
+                <polyline points="119,1 40,67 43,105 69,73"></polyline>
+            </svg>  
+        </div>
+
+        
+    </section>
+    <button>teste</button>
+    <script>
+        const button = document.querySelector('button');
+        const mail = document.querySelector('.mail');
+        const plane = document.querySelector('.plane');
+
+        button.addEventListener('click', function(){
+            mail.classList.toggle('active');
+            plane.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

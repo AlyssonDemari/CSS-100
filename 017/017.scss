@@ -4,6 +4,13 @@ $bg: #353535;
 $light-grey: #aaa;
 $grey: #eee;
 $dark-grey: #ccc;
+$black: #111;
+
+$transition: fill .5s ease-in-out;
+$size-bg: 15rem;
+$sizeW-polygon: 10rem;
+$sizeH-polygon: 8.5rem;
+$size-line: 40rem;
 
 .frame{
 	@include center();
@@ -12,80 +19,63 @@ $dark-grey: #ccc;
 }
 
 .container{
-	
 	&__bg{
 		@include center();
-		width:15rem;
-		height: 15rem;
+		width: $size-bg;
+		height: $size-bg;
 		background: $bg;
 		z-index: 999;
 		position: relative;
 	}
-}
 
-.cont-lines{
-	width: 40rem;
-	height: 36rem;
-	z-index: 1;
+	&__polygon{
+		width: $sizeW-polygon;
+		height: $sizeH-polygon;
 
-	position: absolute;
-	top: -7rem;
-	left: -6rem;
-	rotate: -45deg;	
-	animation:  rotate 30s infinite alternate;
-	
-	@for $i from 1 through 26 {
-		.line-#{$i} {
-			width: .2rem;
-			height: 100%;
-			background: black;
-			position: absolute;
-			top: 0;
-			left: 0;
-			margin-left: 95% * ($i / 26);	
+		.light, .middle, .dark{
+			transition: $transition;
+		}
+
+		.light{ fill: $light-grey;}
+		.middle{ fill: $grey; }
+		.dark{ fill: $dark-grey; }
+
+		&:hover{
+			.light{ fill: $grey; }
+			.middle{ fill: $dark-grey; }
+			.dark{ fill: $light-grey; }
 		}
 	}
 }
 
+.cont-lines{
+	width: $size-line;
+	height: $size-line;
 
-	
-	.light {
-		fill: $light-grey;
-		transition: all .5s ease-in-out;
-	}
-	.middle {
-		fill: $grey;
-		transition: all .5s ease-in-out;
-	}
-	.dark {
-		fill:$dark-grey;
-		transition: all .5s ease-in-out;
-	}
+	position: absolute;
+	top: -7rem;
+	left: -10rem;
+	rotate: -45deg;
+	animation: move 30s infinite alternate;
 
-.polygon {
-	width: 160px;
-	height: 140px;
-	transition: all 1s ease-in-out;
-
-	&:hover .light{
-		fill: $grey;
-				transition: all 1s ease-in-out;
-	}
-	&:hover .middle{
-		fill: $dark-grey;
-				transition: all 1s ease-in-out;
-	}
-	&:hover .dark{
-		fill: $light-grey;
-		transition: all 1s ease-in-out;
+	@for $i from 1 through 26{
+		.line-#{$i}{
+			width: .2rem;
+			height: 100%;
+			background: $black;
+			position: absolute;
+			top: 0;
+			left: 0;
+			margin-left: 95% * ($i / 26);
+		}
 	}
 }
 
-@keyframes rotate {
+@keyframes move{
 	to{
-		transform: translate(0%, 0%);
+		transform: translate(10%, 0);
 	}
 	from{
-		transform: translate(-10%, 0%);
+		transform: translate(0%, 0);
 	}
 }

@@ -11,7 +11,6 @@ $height: 8rem;
 
 .container{
 	@include center();
-	// border: 2px solid red;
 	width: 50%;
 	height: 50%;
 
@@ -47,7 +46,7 @@ $height: 8rem;
 		width: 7rem;
 		height: $height;
 		//display: none;
-		
+
 		&__octagon{
 			fill: $white;
 			transform: rotate(22deg);
@@ -56,19 +55,18 @@ $height: 8rem;
 
 		.sparkles{
 			position: absolute;
-			width: $width +4rem;
-			height: $height +4rem;
-			//border: 2px solid red;
+			width: $width + 4rem;
+			height: $height + 4rem;
 			animation: octa-sparkle 10s infinite;
 
-			&__sparkle {
+			&__sparkle{
 				position: absolute;
 				top: 0;
 				left: 49%;
 				width: .1rem;
 				height: 11.8rem;
-				
-				&:before, &:after {
+
+				&::before, &::after{
 					display: block;
 					content: '';
 					position: absolute;
@@ -79,8 +77,8 @@ $height: 8rem;
 					border-radius: 2px;
 					background: #fff;
 				}
-				
-				&:after {
+
+				&::after{
 					bottom: 0;
 					top: auto;
 				}
@@ -95,18 +93,16 @@ $height: 8rem;
 			.s4{
 				transform: rotate(-45deg);
 			}
-
-
 		}
 	}
-	
+
 	.container-triangle{
 		position: absolute;
 		@include center();
 		width: $width;
 		height: $height;
-		//border: 2px solid red;
 		//display: none;
+	
 
 		&__triangle{
 			fill: $white;
@@ -115,12 +111,11 @@ $height: 8rem;
 
 		.sparkles{
 			position: absolute;
-			width: $width +4rem;
-			height: $height +4rem;
-			//border: 2px solid red;
+			width: $width + 4rem;
+			height: $height + 4rem;
 			animation: triangle-sparkle 10s infinite;
 
-			&__sparkle {
+			&__sparkle{
 				width: .1rem;
 				height: 2rem;
 				background: $white;
@@ -135,22 +130,21 @@ $height: 8rem;
 			.s2{
 				position: absolute;
 				top: 9.5rem;
-				right: .5rem;
+				right:.5rem;
 				transform: rotate(-50deg);
 			}
 			.s3{
 				position: absolute;
-				top: 0rem;
+				top: 0;
 				left: 49%;
 				width: .2rem;
 			}
-
 		}
 	}
 }
 
-@keyframes blobby {
-    0% {
+@keyframes blobby{
+	0% {
         transform: translate3d(0, -18.75rem, 0) scaleY(1.2); 
     }
     10% {
@@ -188,74 +182,74 @@ $height: 8rem;
     }
 }
 
-@keyframes blobby-ring {
-    0%, 74% {
-        transform: translate3d(0,0,0) scale(0);
-        opacity: 1;
-    }
-    80% {
-        opacity: 1;
-    }
-    84%, 100% {
-        transform: translate3d(0,0,0) scale(1.4);
-        opacity: 0;
-    }
+@keyframes blobby-ring{
+	0%, 74% {
+		transform: translate3d(0, 0, 0) scale(0);
+		opacity: 1;
+	}
+	80%{
+		opacity: 1;
+	}
+	84%, 100%{
+		transform: translate3d(0, 0, 0) scale(1.4);
+		opacity: 0;
+	}
 }
 
 @keyframes octa {
-    0%, 30% {
-        transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
-    }
-    36% {
-        transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
-    }
-    40% {
-        transform: translate3d(0,0,0) scale(0.9) rotate(22.5deg);
-    }
-    42%, 44% {
-        transform: translate3d(0,0,0) scale(1) rotate(22.5deg);
-    }
-    48% {
-        transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
-    }
-    54%, 100% {
-        transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
-    }
+	0%, 30%{
+		transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
+	}
+	36%{
+		transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
+	}
+	40%{
+		transform: translate3d(0,0,0) scale(.9) rotate(22.5deg);
+	}
+	42%, 44%{
+		transform: translate3d(0,0,0) scale(1) rotate(22.5deg);
+	}
+	48%{
+		transform: translate3d(0,0,0) scale(1.2) rotate(22.5deg);
+	}
+	54%, 100%{
+		transform: translate3d(0,0,0) scale(0) rotate(22.5deg);
+	}
 }
 
 @keyframes octa-sparkle {
-    0%, 30% {
-        transform: translate3d(0,0,0) scale(0);
-        opacity: 1;
-    }
-    36% {
-        opacity: 1;
-    }
-    40%, 100% {
-        transform: translate3d(0,0,0) scale(1.4);
-        opacity: 0;
-    }
+	0%, 30%{
+		transform: translate3d(0,0,0) scale(0);
+		opacity: 1;
+	}
+	36%{
+		opacity: 1;
+	}
+	40%, 100%{
+		transform: translate3d(0,0,0) scale(1.4);
+		opacity: 0;
+	}
 }
 
 @keyframes triangle {
-    0%, 52% {
-        transform: translate3d(0,0,0) scale(0);
-    }
-    58% {
-        transform: translate3d(0,0,0) scale(1.2);
-    }
-    62% {
-        transform: translate3d(0,0,0) scale(0.9);
-    }
-    64%, 66% {
-        transform: translate3d(0,0,0) scale(1);
-    }
-    70% {
-        transform: translate3d(0,0,0) scale(1.2);
-    }
-    76%, 100% {
-        transform: translate3d(0,0,0) scale(0);
-    }
+	0%, 54%{
+		transform: translate3d(0,0,0) scale(0);
+	}
+	58%{
+		transform: translate3d(0,0,0) scale(1.2);
+	}
+	62%{
+		transform: translate3d(0,0,0) scale(0.9);
+	}
+	64%, 66%{
+		transform: translate3d(0,0,0) scale(1);
+	}
+	70%{
+		transform: translate3d(0,0,0) scale(1.2);
+	}
+	76%, 100%{
+		transform: translate3d(0,0,0) scale(0);
+	}
 }
 
 @keyframes triangle-sparkle {
