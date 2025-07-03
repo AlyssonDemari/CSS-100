@@ -21,16 +21,16 @@ body {
 }
 
 .container {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .cont-move {
@@ -45,17 +45,17 @@ body {
 .cont-move .cont-purple, .cont-move .cont-blue, .cont-move .cont-green {
   width: 25rem;
   height: 25rem;
-  background-color: #9B59B6;
+  background: #9B59B6;
   border-radius: 0.4rem;
 }
 .cont-move .cont-purple {
-  background-color: #9B59B6;
+  background: #9B59B6;
 }
 .cont-move .cont-blue {
-  background-color: #3498DB;
+  background: #3498DB;
 }
 .cont-move .cont-green {
-  background-color: #1ABC9C;
+  background: #1ABC9C;
 }
 
 .radio {
@@ -77,10 +77,9 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: #FFF;
-  z-index: 9999;
+  background: #FFF;
+  z-index: 999;
   transition: 0.5s ease-in-out;
-  animation: move 0.5s ease-in-out infinite;
 }
 .radio .circle:nth-of-type(1) {
   box-sizing: border-box;
