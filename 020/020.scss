@@ -8,13 +8,11 @@ $button-hover: #1abc9c;
 .frame{
 	background: $bg;
 	@include center();
-
 }
 
 .container{
-	// border: 2px solid red;
 	width: 100%;
-	height:100%;
+	height: 100%;
 	@include center(column);
 	gap: 2rem;
 
@@ -27,20 +25,20 @@ $button-hover: #1abc9c;
 		position: absolute;
 		width: 10rem;
 		height: 2.5rem;
-		border-radius: 2rem;
 		border: none;
+		border-radius: 2rem;
 		font-size: 1rem;
 		font-weight: 600;
 		color: $bg;
 		transition: all .5s;
-		
+
 		&:hover{
 			background: $button-hover;
 			color: $button;
 			transition: all .5s;
 			cursor: pointer;
 		}
-		
+
 		&.active{
 			animation: button 1s ease-in-out 2.8s forwards;
 		}
@@ -51,7 +49,6 @@ $button-hover: #1abc9c;
 		opacity: 0;
 		visibility: hidden;
 
-		
 		&:hover{
 			background: $button-hover;
 			color: $button;
@@ -61,7 +58,7 @@ $button-hover: #1abc9c;
 
 		&.active{
 			animation: buttonReset 1s ease-in-out 5s forwards;
-			display: block
+			display: block;
 		}
 
 	}
@@ -72,7 +69,6 @@ $button-hover: #1abc9c;
 	width: 12rem;
 	height: 12rem;
 	border-radius: 50%;
-	//border: 2px solid red;	
 
 	.circle{
 		width: 12rem;
@@ -80,7 +76,7 @@ $button-hover: #1abc9c;
 		position: absolute;
 		border-radius: 50%;
 		background: $bg-circle;
-			
+
 		&.active{
 			animation: circle .8s ease-in-out .5s forwards;
 		}
@@ -90,28 +86,28 @@ $button-hover: #1abc9c;
 		width: 12rem;
 		height: 12rem;
 		position: absolute;
+		border: .2rem solid $bg-circle;
 		border-radius: 50%;
-		border: 2px solid $bg-circle;
 
 		&.active{
 			animation: circle 1s ease-in-out forwards;
 		}
 	}
 
-	.icon {
+	.icon{
 		fill: none;
-		stroke-width: 2px;
+		stroke-width: 2;
 		stroke: $white;
 		stroke-linecap: square;
 		stroke-dasharray: 325 325;
 		z-index: 999;
-		
-		&.mail {
+
+		&.mail{
 			width: 120px;
 			height: 70px;
 			stroke-dashoffset: 0;
 
-			&.active {
+			&.active{
 				stroke-dashoffset: 326;
 				transition: stroke-dashoffset 1s ease-in-out;
 			}
@@ -122,12 +118,11 @@ $button-hover: #1abc9c;
 			width: 120px;
 			height: 110px;
 			stroke-dashoffset: 326;
-			// border: 2px solid red;
 
-			&.active {
+			&.active{
 				stroke-dashoffset: 0;
 				transition: stroke-dashoffset 1s ease-in-out .6s;
-				animation: fly 2.5s cubic-bezier(0.42, 0, 0.58, 1) 1.5s forwards;
+				animation: fly 2.5s cubic-bezier(.42, 0, .58, 1) 1.5s forwards;
 			}
 		}
 	}
@@ -141,36 +136,33 @@ $button-hover: #1abc9c;
 		transform: translate(-2rem, 2rem);
 	}
 	50%{
-		transform: translate(20rem, -8rem) scale(0.5);
+		transform: translate(20rem, -8rem) scale(.5);
 	}
 	100%{
-		transform: translate(20rem, -8rem) scale(0.5);
+		transform: translate(20rem, -8rem) scale(.5);
 		opacity: 0;
 	}
 }
-
 @keyframes button{
-	0% {
-    transform: scale(1);
-    opacity: 1;
-
-  	}
-	50%, 70% {
-		transform: scale(0.5, 1);
+	0%{
+		transform: scale(1);
+		opacity: 1;
+	}
+	50%, 70%{
+		transform: scale(.5, 1);
 		border-radius: 50%;
 		width: 5rem;
 		font-size: 0;
 		background: $button-hover;
 		opacity: 1;
 	}
-	100% {
+	100%{
 		transform: scale(0);
 		opacity: 0;
 		font-size: 0;
 		border-radius: 50%;
 	}
 }
-
 @keyframes buttonReset{
 	0%{
 		transform: scale(0);
@@ -193,15 +185,15 @@ $button-hover: #1abc9c;
 		visibility: visible;
 	}
 }
-
 @keyframes circle{
-	0% {
+	0%{
 		transform: translate3d(0,0,0) scale(1);
 	}
-	20% {
+	20%{
 		transform: scale(1.1);
 	}
-	100% {
+	100%{
 		transform: scale(0);
 	}
 }
+

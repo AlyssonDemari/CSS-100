@@ -54,8 +54,8 @@ body {
   position: absolute;
   width: 10rem;
   height: 2.5rem;
-  border-radius: 2rem;
   border: none;
+  border-radius: 2rem;
   font-size: 1rem;
   font-weight: 600;
   color: #2C3E50;
@@ -110,15 +110,15 @@ body {
   width: 12rem;
   height: 12rem;
   position: absolute;
+  border: 0.2rem solid #354A5F;
   border-radius: 50%;
-  border: 2px solid #354A5F;
 }
 .container-mail .circle-ring.active {
   animation: circle 1s ease-in-out forwards;
 }
 .container-mail .icon {
   fill: none;
-  stroke-width: 2px;
+  stroke-width: 2;
   stroke: #FFF;
   stroke-linecap: square;
   stroke-dasharray: 325 325;
