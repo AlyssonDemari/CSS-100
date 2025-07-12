@@ -81,7 +81,7 @@ body {
   stroke-dasharray: 0 3.125rem;
   stroke-linecap: round;
   stroke-dashoffset: 14;
-  animation: points 1s linear infinite;
+  animation: dots 1s linear infinite;
 }
 
 @keyframes pacman-top {
@@ -101,14 +101,11 @@ body {
   }
 }
 @keyframes eye {
-  0% {
-    transform: translate(0, 0);
-  }
   100% {
-    transform: translate(0, 0.8rem);
+    transform: translate(0, 0.6rem);
   }
 }
-@keyframes points {
+@keyframes dots {
   100% {
     stroke-dashoffset: 64;
   }

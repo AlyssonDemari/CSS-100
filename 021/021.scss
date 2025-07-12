@@ -54,8 +54,6 @@ $pacman: #F4D146;
 		z-index: 3;
 	}
 
-	//começar o vídeo daqui
-
 	.dots{
 		position: absolute;
 		top: 3rem;
@@ -67,7 +65,7 @@ $pacman: #F4D146;
 		stroke-dasharray: 0 3.125rem;
 		stroke-linecap: round;
 		stroke-dashoffset: 14;
-		animation: points 1s linear infinite;
+		animation: dots 1s linear infinite;
 	}
 }
 
@@ -79,7 +77,6 @@ $pacman: #F4D146;
 		transform: rotate(12deg);
 	}
 }
-
 @keyframes pacman-down {
 	0%{
 		transform: rotate(12deg);
@@ -88,19 +85,14 @@ $pacman: #F4D146;
 		transform: rotate(-12deg);
 	}
 }
-
 @keyframes eye {
-	0%{
-		transform: translate(0, 0);
-	}
 	100%{
-		transform: translate(0, .8rem);
+		transform: translate(0, .6rem);
 	}
 }
-
-@keyframes points {
-
-	100%{
-		stroke-dashoffset: 64;
-	}
+@keyframes dots {
+  100% {
+    stroke-dashoffset: 64;
+  }
 }
+

@@ -1,0 +1,120 @@
+@import "../standard";
+
+$bg: #243A46;
+$bg-progress: #1B2A33;
+$text: #6e9eb1;
+$lineG: #27E1AE;
+$lineB: #5CE1EC;
+
+@mixin charts($size: 3rem, $color: #000, $dashoffset: 505, $dasharray: 505){
+    fill: none;
+    stroke: $color;
+    stroke-width: $size;
+    stroke-dashoffset: $dashoffset;
+    stroke-dasharray: $dasharray;
+    stroke-linecap: round;
+    animation: teste 1s linear forwards;
+    transform-origin: center;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+    background: $bg;
+
+    @include center(column);
+
+    &__title{
+        color: $white;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 400;
+
+        span{
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: .2rem;
+            font-size: 1.7rem;
+        }
+    }
+}
+
+.container-charts{
+    width: 80%;
+    height: 70%;
+    @include center(column, space-evenly);
+}
+
+.container-Bcircle{
+    position: relative;
+            border: 2px solid red;
+
+    &__svg{
+        stroke: $lineG;
+        transform: rotate(-90deg);
+        width: 50%;
+    }
+
+    &__progress{
+        @include charts(.8rem, $lineG, 505, 505);
+    }
+
+    &__bg{
+        @include charts(.8rem, $bg-progress);
+        stroke-dasharray: 0;
+    }
+
+    &__text{
+        color: $text;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.container-Scircles{
+    @include center(row, space-between);
+    border: 2px solid blue;
+    height: 40%;
+}
+
+.container-Scircle{
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    @include center(row, space-between);
+
+    &__svg{
+        stroke: $lineG;
+        width: 100%;
+        transform: rotate(-90deg);
+        border: 2px solid red;
+    }
+
+    &__progress{
+        @include charts(.6rem, $lineG, 300, 300);
+    }
+
+    &__bg{
+        @include charts(.6rem, $bg-progress);
+        stroke-dasharray: 0;
+    }
+
+    &__text{
+        color: $text;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+@keyframes teste {
+  to {
+    stroke-dashoffset: 200;
+  }
+}
