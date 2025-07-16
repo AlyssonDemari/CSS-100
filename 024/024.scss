@@ -1,0 +1,70 @@
+@import "../standard";
+
+$bg: #57D895;
+$bg-hover: #43b178;
+$line: #1d4631;
+$transition: all 0.3s ease;
+
+.frame{
+    background: $bg;
+    @include center();
+}
+
+label{
+    @include center();
+    border: 2px solid red;
+    border-radius: 5rem;
+    width: 17rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: .2rem solid $white;
+    color: $white;
+    transition: $transition;
+    animation: up 1s linear forwards;
+
+    
+    
+    
+    &:hover, &:focus{
+        background: $bg-hover;
+        transition: $transition;
+    }
+}
+
+#button:checked + label{
+    
+    animation: down .5s linear forwards;
+    color: transparent;
+        border: .2rem solid $line;
+}
+
+#button:checked + label .img{
+    animation: check .5s linear 1s forwards;
+}
+
+.img{
+    position: absolute;
+    opacity: 0;
+    padding: 1.1rem;
+    border-radius: 50%;
+}
+
+@keyframes down {
+    100%{
+        width: 4rem;
+    }
+}
+
+@keyframes check{
+    0%{
+        opacity: 0;
+        background: $bg;
+    }
+    100%{
+        opacity: 1;
+        background: $white;
+    }
+}
+

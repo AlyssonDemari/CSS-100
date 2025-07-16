@@ -22,7 +22,7 @@ body{
     height: 400px;
     border-radius: 8px;
     box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
-    font-family: 'Courier New', 'Courier', sans-serif;
+    font-family: $font-standard;
 }
 
 @mixin center( $direction: row, $justify: center, $align: center, $wrap: nowrap ){

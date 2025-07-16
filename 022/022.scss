@@ -7,42 +7,126 @@ $lineG: #27E1AE;
 $lineB: #5CE1EC;
 
 @mixin charts($size: 3rem, $color: #000, $dashoffset: 505, $dasharray: 505){
-    fill: none;
-    stroke: $color;
-    stroke-width: $size;
-    stroke-dashoffset: $dashoffset;
-    stroke-dasharray: $dasharray;
-    stroke-linecap: round;
-    animation: teste 1s linear forwards;
-    transform-origin: center;
+  fill: none;
+  stroke: $color;
+  stroke-width: $size;
+  stroke-dashoffset: $dashoffset;
+  stroke-dasharray: $dasharray;
+  stroke-linecap: round;
+  animation: fillIn 1s linear forwards;
+  transform-origin: center;
+  transform: rotate(-90deg);
+}
+
+.frame{
+  @include center(column, center);
 }
 
 .container{
-    width: 100%;
-    height: 100%;
-    background: $bg;
-    border-radius: .3rem; 
+  width: 100%;
+  height: 100%;
+  background: $bg;
+  border-radius: .3rem; 
+  font-family: $font-standard;
 
-    @include center(column, spcae-between, center, nowrap);
+  @include center(column, center);
 
-    &__title{
-        color: $white;
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        font-weight: 400;
+  &__title{
+    color: $white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: .5rem;
+    letter-spacing: -.1rem;
 
-        span{
-            font-weight: 600;
-            line-height: 1.5;
-            letter-spacing: .2rem;
-            font-size: 1.7rem;
-        }
+    span{
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: .2rem;
+      font-size: 1.7rem;
     }
+  }
+}
+
+.container-charts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 14.5rem;
+  grid-template-rows: repeat(2, 1fr);
+  //border: 2px solid pink;
+
+  .chart{
+    position: relative;
+
+    svg{
+      //border: 2px solid blue;
+      height: 100%;
+      width: 100%;
+      fill: none;
+    }
+
+    &__bar{
+      @include charts(.8rem, $lineG, 465, 465);
+
+    }
+
+    &__bg{
+      @include charts(.8rem, $bg-progress, 465, 0);
+      animation: none;
+    }
+
+    &__text{
+      color: $text;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: .9rem;
+
+      span{
+        color: $white;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+.big { 
+  grid-area: 1 / 1 / 2 / 3; 
+  width: 100%;
+  height: 8rem;
+}
+
+.small1 { 
+  grid-area: 2 / 1 / 3 / 2; 
+  width: 10rem;
+  height: 6.5rem;
+
+  .chart__bar{
+    @include charts(.6rem, $lineB, 390, 390);
+  }
+
+  .chart__bg{
+    @include charts(.6rem, $bg-progress, 400, 0);
+  }
+}
+
+.small2 { 
+  grid-area: 2 / 2 / 3 / 3;
+  width: 10rem;
+  height: 6.5rem;
+
+  .chart__bar{
+    @include charts(.6rem, $lineB, 300, 300);
+  }
+
+  .chart__bg{
+    @include charts(.6rem, $bg-progress, 0, 0);
+  }
 }
 
 
-
-@keyframes teste {
+@keyframes fillIn {
   to {
     stroke-dashoffset: 200;
   }
