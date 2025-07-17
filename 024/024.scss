@@ -2,69 +2,133 @@
 
 $bg: #57D895;
 $bg-hover: #43b178;
-$line: #1d4631;
-$transition: all 0.3s ease;
+$line: #45B078;
+
+$layaout: (
+    "button-width": 17rem,
+    "circle-width": 4rem,
+    "height": 4rem,
+    "border-radius": 2rem,
+    "font-size": 1.5rem,
+    "upper-index": 99,
+    "border": .2rem solid $white,
+);
+
+$svg: (
+    "line-width": .2rem,
+    "dasharray": 190,
+    "dashoffset": 190,
+    "dashoffset-animation": 0,
+    "dashoffset-full": 500,
+    "fill": none,
+    "stroke": $white,
+);
+
 
 .frame{
     background: $bg;
     @include center();
 }
 
-label{
-    @include center();
-    border: 2px solid red;
-    border-radius: 5rem;
-    width: 17rem;
-    height: 4rem;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: .2rem solid $white;
-    color: $white;
-    transition: $transition;
-    animation: up 1s linear forwards;
+.container{
+    position: relative;
 
-    
-    
-    
-    &:hover, &:focus{
-        background: $bg-hover;
-        transition: $transition;
+    input[type="checkbox"]{
+        display: none;
     }
-}
 
-#button:checked + label{
-    
-    animation: down .5s linear forwards;
-    color: transparent;
-        border: .2rem solid $line;
-}
+    &__label{
+        @include center();
+        @include position-absolute( 50%, 0, 0, 50%, -50%, -50% );
+        font-size: map-get($layaout, "font-size");
+        width: map-get($layaout, "button-width");
+        height: map-get($layaout, "height");
+        border-radius: map-get($layaout, "border-radius");
+        border: map-get($layaout, "border");
+        z-index: map-get($layaout, "upper-index");
+        color: $white;
 
-#button:checked + label .img{
-    animation: check .5s linear 1s forwards;
-}
+        user-select: none;
+        text-transform: uppercase;
+        cursor: pointer;
 
-.img{
-    position: absolute;
-    opacity: 0;
-    padding: 1.1rem;
-    border-radius: 50%;
-}
-
-@keyframes down {
-    100%{
-        width: 4rem;
+        #toggle:checked + &{
+            animation: hide  1s ease  forwards, fill 2s ease 1s forwards;
+        }
     }
-}
 
-@keyframes check{
-    0%{
+    &__img{
+        @include position-absolute( 50%, 0, 0, 50%, -50%, -50% );
+        border-radius: map-get($standard, "cicle-radius");
+        
         opacity: 0;
-        background: $bg;
+
+        #toggle:checked + label & {
+            animation: img 2s ease 1s forwards;
+        }
     }
+
+    &__circle{
+        //border: 2px solid red;
+        @include position-absolute( 50%, 0, 0, 50%,);
+        transform: translate(-50%, -50%) rotate(-90deg);
+        stroke-width: map-get($svg, "line-width");
+        stroke-dasharray: map-get($svg, "dasharray");
+        stroke-dashoffset: map-get($svg, "dashoffset");
+        fill: map-get($svg, "fill");
+        stroke: map-get($svg, "stroke");
+
+        #toggle:checked ~ &{
+            animation: circle  2s ease 1s forwards;
+        }
+    }
+}
+
+@keyframes img {
     100%{
         opacity: 1;
-        background: $white;
     }
 }
 
+@keyframes hide {
+    100%{
+        width: map-get($layaout, "circle-width");
+        font-size: 0;
+        border: 2px solid $line;
+    }
+}
+
+@keyframes circle {
+	0% {
+		stroke-dashoffset: map-get($svg, "dasharray");
+        z-index: map-get($layaout, "upper-index" );
+	}
+	50% {
+		stroke-dashoffset: map-get($svg, "dashoffset-animation");
+		stroke-dasharray: map-get($svg, "dasharray");
+        z-index: map-get($layaout, "upper-index" );
+        
+		transform:  translate(-50%,-50%)rotate(-90deg) scale(1);
+		opacity: 1;
+	}
+	90%, 100% {
+		stroke-dasharray: map-get($svg, "dashoffset-full")  ;
+		transform: translate(-50%,-50%) rotate(-90deg) scale(2);
+		opacity: 0;
+	}
+}
+
+@keyframes fill {
+	0% {
+		background: transparent;
+	}
+	100% {
+		background: $white;
+	}
+}
+
+@keyframes back {
+    100%{
+        width: map-get($layaout, "button-width");
+    }
+}

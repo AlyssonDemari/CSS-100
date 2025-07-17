@@ -1,16 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="023.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="023.css">
 </head>
 <body>
-    <section class="frame">
-        <div class="container">
-            <h1>moments</h1>
-        </div>
-    </section>
+	<section class="frame">
+		<div class="container">
+			<h1 class="container__title">MOMENTS</h1>
+			<svg class="container__circle" width="5rem" height="5rem">
+				<circle cx="50%" cy="50%" r="25"></circle>
+			</svg>
+			<svg class="container__line">
+				<polyline points="178,43 0,43" />
+				<polyline points="178,43 350,43" />
+			</svg>
+			<svg class="container__breakpoint">
+				<polyline points="8,40 8,2 29,2" />
+				<polyline points="8,40 8,82 29,82"  />
+			</svg>
+			<svg class="container__breakpoint left">
+				<polyline points="345,40 345,2 320,2" />
+				<polyline points="345,40 345,82 320,82"  />
+			</svg>
+			<svg class="container__hide">
+				<rect class="top" x="0" y="7" width="22rem" height="5.5rem"stroke-width="2"/>
+				<rect class="down" x="0" y="39" width="22rem" height="5.5rem"stroke-width="2"/>
+			</svg>
+		</div>
+	</section>
+
+	<script>
+		const minhaLinha = document.querySelector('polyline');
+
+		// Pega o comprimento total
+		const comprimento = minhaLinha.getTotalLength();
+
+		console.log(comprimento); // Irá imprimir 63
+			</script>
 </body>
 </html>

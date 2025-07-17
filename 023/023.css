@@ -26,31 +26,130 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   position: relative;
+  fill: none;
 }
 
-h1 {
+.container__title {
   color: #FFF;
+  font-size: 4rem;
   text-transform: uppercase;
-  font-size: 3.5rem;
 }
-h1::before {
-  content: "collect";
+.container__title::before, .container__title::after {
+  content: "Collect";
   position: absolute;
-  top: 38%;
+  top: 40%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 2rem;
+  transform: translate(-80%, -50%);
+  font-size: 1.7rem;
   font-weight: 200;
+  z-index: 5;
+  opacity: 0;
+  animation: move 0.5s linear 2.5s forwards;
 }
-h1::after {
+.container__title::after {
   content: "not things";
   position: absolute;
-  bottom: 26%;
+  top: 60%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+}
+.container__circle {
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 2rem;
-  font-weight: 200;
+  z-index: 5;
+}
+.container__circle circle {
+  fill: #FFF;
+  scale: 1;
+  stroke-dashoffset: 157;
+  stroke-dasharray: 157;
+  stroke-width: 0.2rem;
+  transform-origin: center;
+  animation: circle 1s ease-out 0.5s forwards;
+}
+@keyframes circle {
+  10% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 0;
+  }
+}
+.container__line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22rem;
+  height: 5.5rem;
+  stroke: #FFF;
+  stroke-width: 0.2rem;
+  stroke-dasharray: 22rem;
+  stroke-dashoffset: 22rem;
+  z-index: 5;
+  animation: line 1.3s ease-in-out 1.3s forwards;
+}
+@keyframes line {
+  from {
+    stroke-dashoffset: 22rem;
+  }
+  to {
+    stroke-dashoffset: -22rem;
+  }
+}
+.container__breakpoint {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 22rem;
+  height: 5.5rem;
+  stroke: #FFF;
+  stroke-width: 0.2rem;
+  stroke-dashoffset: 165;
+  stroke-dasharray: 165;
+  animation: breakpoint 2s ease-in-out 2.1s forwards;
+  animation: breakpoint 2s ease-in-out 2.1s forwards;
+  z-index: 5;
+}
+@keyframes breakpoint {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.container__hide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5.5rem;
+  width: 22rem;
+  fill: #E16D6C;
+}
+.container__hide .top {
+  height: 2rem;
+  transform-origin: 50% 0%;
+  animation: reveal 1.5s linear 2s forwards;
+}
+.container__hide .down {
+  height: 2rem;
+  transform-origin: 50% 100%;
+  animation: reveal 1.5s linear 2s forwards;
+}
+
+@keyframes reveal {
+  100% {
+    transform: scaleY(0);
+  }
+}
+@keyframes move {
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }/*# sourceMappingURL=023.css.map */

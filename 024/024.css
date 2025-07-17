@@ -30,59 +30,112 @@ body {
   flex-wrap: nowrap;
 }
 
-label {
+.container {
+  position: relative;
+}
+.container input[type=checkbox] {
+  display: none;
+}
+.container__label {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   flex-direction: row;
   flex-wrap: nowrap;
-  border: 2px solid red;
-  border-radius: 5rem;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
   width: 17rem;
   height: 4rem;
-  font-size: 1.5rem;
+  border-radius: 2rem;
+  border: 0.2rem solid #FFF;
+  z-index: 99;
+  color: #FFF;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   text-transform: uppercase;
   cursor: pointer;
-  border: 0.2rem solid #FFF;
-  color: #FFF;
-  transition: all 0.3s ease;
-  animation: up 1s linear forwards;
 }
-label:hover, label:focus {
-  background: #43b178;
-  transition: all 0.3s ease;
+#toggle:checked + .container__label {
+  animation: hide 1s ease forwards, fill 2s ease 1s forwards;
 }
-
-#button:checked + label {
-  animation: down 0.5s linear forwards;
-  color: transparent;
-  border: 0.2rem solid #1d4631;
-}
-
-#button:checked + label .img {
-  animation: check 0.5s linear 1s forwards;
-}
-
-.img {
+.container__img {
   position: absolute;
-  opacity: 0;
-  padding: 1.1rem;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
+  opacity: 0;
+}
+#toggle:checked + label .container__img {
+  animation: img 2s ease 1s forwards;
+}
+.container__circle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translate(0, 0);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  stroke-width: 0.2rem;
+  stroke-dasharray: 190;
+  stroke-dashoffset: 190;
+  fill: none;
+  stroke: #FFF;
+}
+#toggle:checked ~ .container__circle {
+  animation: circle 2s ease 1s forwards;
 }
 
-@keyframes down {
-  100% {
-    width: 4rem;
-  }
-}
-@keyframes check {
-  0% {
-    opacity: 0;
-    background: #57D895;
-  }
+@keyframes img {
   100% {
     opacity: 1;
+  }
+}
+@keyframes hide {
+  100% {
+    width: 4rem;
+    font-size: 0;
+    border: 2px solid #45B078;
+  }
+}
+@keyframes circle {
+  0% {
+    stroke-dashoffset: 190;
+    z-index: 99;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 190;
+    z-index: 99;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(1);
+    opacity: 1;
+  }
+  90%, 100% {
+    stroke-dasharray: 500;
+    transform: translate(-50%, -50%) rotate(-90deg) scale(2);
+    opacity: 0;
+  }
+}
+@keyframes fill {
+  0% {
+    background: transparent;
+  }
+  100% {
     background: #FFF;
+  }
+}
+@keyframes back {
+  100% {
+    width: 17rem;
   }
 }/*# sourceMappingURL=024.css.map */

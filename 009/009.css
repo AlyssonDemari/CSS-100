@@ -175,12 +175,12 @@ body {
 }
 .rain .drop-1, .rain .small-drop-1 {
   position: relative;
-  top: 172;
+  top: 149;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.9s linear 0.08s infinite;
+  animation: down 1s linear 0.16s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-1::before, .rain .small-drop-1::before {
@@ -195,12 +195,12 @@ body {
 }
 .rain .drop-2, .rain .small-drop-2 {
   position: relative;
-  top: 99;
+  top: 132;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.8s linear 2s infinite;
+  animation: down 0.9s linear 1.8s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-2::before, .rain .small-drop-2::before {
@@ -215,12 +215,12 @@ body {
 }
 .rain .drop-3, .rain .small-drop-3 {
   position: relative;
-  top: 181;
+  top: 72;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.9s linear 0.92s infinite;
+  animation: down 1s linear 1.92s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-3::before, .rain .small-drop-3::before {
@@ -235,12 +235,12 @@ body {
 }
 .rain .drop-4, .rain .small-drop-4 {
   position: relative;
-  top: 2;
+  top: 190;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.9s linear 0.04s infinite;
+  animation: down 0.8s linear 0.96s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-4::before, .rain .small-drop-4::before {
@@ -255,12 +255,12 @@ body {
 }
 .rain .drop-5, .rain .small-drop-5 {
   position: relative;
-  top: 120;
+  top: 118;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.8s linear 1.16s infinite;
+  animation: down 1s linear 1.72s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-5::before, .rain .small-drop-5::before {
@@ -275,12 +275,12 @@ body {
 }
 .rain .drop-6, .rain .small-drop-6 {
   position: relative;
-  top: 200;
+  top: 57;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 1.1s linear 0.04s infinite;
+  animation: down 1.1s linear 1.4s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-6::before, .rain .small-drop-6::before {
@@ -295,12 +295,12 @@ body {
 }
 .rain .drop-7, .rain .small-drop-7 {
   position: relative;
-  top: 123;
+  top: 36;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.9s linear 1.36s infinite;
+  animation: down 0.9s linear 0.8s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-7::before, .rain .small-drop-7::before {
@@ -315,12 +315,12 @@ body {
 }
 .rain .drop-8, .rain .small-drop-8 {
   position: relative;
-  top: 83;
+  top: 84;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 1.1s linear 1s infinite;
+  animation: down 0.9s linear 1.48s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-8::before, .rain .small-drop-8::before {
@@ -335,12 +335,12 @@ body {
 }
 .rain .drop-9, .rain .small-drop-9 {
   position: relative;
-  top: 112;
+  top: 143;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 0.8s linear 0.72s infinite;
+  animation: down 1.1s linear 1.76s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-9::before, .rain .small-drop-9::before {
@@ -355,12 +355,12 @@ body {
 }
 .rain .drop-10, .rain .small-drop-10 {
   position: relative;
-  top: 9;
+  top: 164;
   width: 10px;
   height: 10px;
   background: #7FC1F9;
   border-radius: 50%;
-  animation: down 1s linear 0.24s infinite;
+  animation: down 0.9s linear 0.32s infinite;
   animation-fill-mode: both;
 }
 .rain .drop-10::before, .rain .small-drop-10::before {
@@ -376,7 +376,7 @@ body {
 .rain .small-drop-1 {
   width: 5px;
   height: 5px;
-  animation: down 1s linear 1.68s infinite;
+  animation: down 1.1s linear 1.68s infinite;
 }
 .rain .small-drop-1::before {
   top: -3px;
@@ -387,7 +387,7 @@ body {
 .rain .small-drop-2 {
   width: 5px;
   height: 5px;
-  animation: down 1s linear 0.72s infinite;
+  animation: down 0.9s linear 1.2s infinite;
 }
 .rain .small-drop-2::before {
   top: -3px;
@@ -398,7 +398,7 @@ body {
 .rain .small-drop-3 {
   width: 5px;
   height: 5px;
-  animation: down 0.9s linear 1.6s infinite;
+  animation: down 0.8s linear 1.76s infinite;
 }
 .rain .small-drop-3::before {
   top: -3px;
@@ -409,7 +409,7 @@ body {
 .rain .small-drop-4 {
   width: 5px;
   height: 5px;
-  animation: down 0.8s linear 0.76s infinite;
+  animation: down 0.9s linear 0.2s infinite;
 }
 .rain .small-drop-4::before {
   top: -3px;
@@ -420,7 +420,7 @@ body {
 .rain .small-drop-5 {
   width: 5px;
   height: 5px;
-  animation: down 0.8s linear 1.44s infinite;
+  animation: down 1s linear 1s infinite;
 }
 .rain .small-drop-5::before {
   top: -3px;
@@ -431,7 +431,7 @@ body {
 .rain .small-drop-6 {
   width: 5px;
   height: 5px;
-  animation: down 0.9s linear 1.8s infinite;
+  animation: down 1.1s linear 1.08s infinite;
 }
 .rain .small-drop-6::before {
   top: -3px;
@@ -442,7 +442,7 @@ body {
 .rain .small-drop-7 {
   width: 5px;
   height: 5px;
-  animation: down 0.8s linear 0.52s infinite;
+  animation: down 0.9s linear 1.32s infinite;
 }
 .rain .small-drop-7::before {
   top: -3px;
@@ -453,7 +453,7 @@ body {
 .rain .small-drop-8 {
   width: 5px;
   height: 5px;
-  animation: down 0.9s linear 0.48s infinite;
+  animation: down 1s linear 1.16s infinite;
 }
 .rain .small-drop-8::before {
   top: -3px;
@@ -464,7 +464,7 @@ body {
 .rain .small-drop-9 {
   width: 5px;
   height: 5px;
-  animation: down 0.9s linear 0.36s infinite;
+  animation: down 1.1s linear 0.08s infinite;
 }
 .rain .small-drop-9::before {
   top: -3px;
@@ -475,7 +475,7 @@ body {
 .rain .small-drop-10 {
   width: 5px;
   height: 5px;
-  animation: down 0.9s linear 1.2s infinite;
+  animation: down 1s linear 0.32s infinite;
 }
 .rain .small-drop-10::before {
   top: -3px;

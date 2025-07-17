@@ -1,35 +1,164 @@
 @import "../standard";
 
 $bg: #E16D6C;
+$zero: 0;
+$width: 22rem;
+$height: 5.5rem;
+$upperIndex: 5;
+$normal-scale: 1;
+
+$typography: (
+	"title": 4rem,
+	"subTitle": 1.7rem,
+	"coverTitle": 2rem,
+);
+
+$svg: (
+	"line-circle": 157,
+	"line-breackpoint": 165,
+	"stroke-width": .2rem,
+);
+
+
 
 .frame{
-    background: $bg;
-    @include center();
-    position: relative;
+	background: $bg;
+	@include center(column);
+	position: relative;
+	fill: none;
 }
 
-h1{
-    color: $white;
-    text-transform: uppercase;
-    font-size: 3.5rem;
+@mixin position-absolute($top: 50%, $left: 50%, $x: -50%, $y: -50%){
+	position: absolute;
+	top: $top;
+	left: $left;
+	transform: translate($x, $y);
+}
 
-    &::before{
-        content: 'collect';
-        position: absolute;
-        top: 38%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: 200;
-    }
+.container{
 
-    &::after{
-        content: 'not things';
-        position: absolute;
-        bottom: 26%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 2rem;
-        font-weight: 200;
-    }
+	&__title{
+		color: $white;
+		font-size: map-get($typography, "title");
+		text-transform: uppercase;
+
+		&::before{
+			content: 'Collect';
+			@include position-absolute(40%, 50%, -80%, -50%);
+			font-size: map-get($typography, "subTitle");
+			font-weight: 200;
+			z-index: $upperIndex;
+			opacity: $zero;
+			animation: move .5s linear 2.5s forwards;
+		}
+
+		&::after{
+			content: 'not things';
+			@extend ::before;
+			@include position-absolute(60%, 50%, -30%, -50%);
+		}
+	}
+
+	&__circle{
+	//border: 2px solid blue;
+	@include position-absolute();
+	z-index: $upperIndex;
+
+	circle{
+		fill: $white;
+		scale: $normal-scale;
+		stroke-dashoffset: map-get($svg, "line-circle");
+		stroke-dasharray: map-get($svg, "line-circle");
+		stroke-width: map-get($svg, "stroke-width");
+		transform-origin: center;
+		animation: circle 1s ease-out .5s forwards ;
+	}
+
+	@keyframes circle {
+		10%{
+			scale: $normal-scale + .2;
+		}
+		100%{
+			scale: $zero;
+		}
+	}
+	}
+
+	&__line {
+		//border: 2px solid red;
+		@include position-absolute( );
+		width: $width;
+		height: $height;
+		stroke: $white;
+		stroke-width: map-get($svg, "stroke-width");
+		stroke-dasharray: $width;
+		stroke-dashoffset: $width;
+		z-index: $upperIndex;
+		animation: line 1.3s ease-in-out 1.3s forwards;
+
+		@keyframes line {
+			from {
+				stroke-dashoffset: $width;
+			}
+
+			to {
+				stroke-dashoffset: -$width;
+			}
+		}
+	}
+
+	&__breakpoint{
+		//border: 2px solid red;
+		@include position-absolute( );
+		width: $width;
+		height: $height;
+		stroke:$white;
+		stroke-width: map-get($svg, "stroke-width");
+		stroke-dashoffset: map-get($svg, "line-breackpoint");
+		stroke-dasharray: map-get($svg, "line-breackpoint");
+		animation: breakpoint 2s ease-in-out 2.1s forwards;
+		animation: breakpoint 2s ease-in-out 2.1s forwards;
+		z-index: $upperIndex;
+
+		@keyframes breakpoint {
+			to {
+				stroke-dashoffset: $zero;
+			}
+		}
+	}
+
+	&__hide{
+		@include position-absolute( );
+		//border: 2px solid purple;
+		height: $height;
+		width: $width;
+		fill: $bg;
+		
+		.top{
+			height: map-get($typography, "coverTitle");
+			transform-origin: 50% 0%;
+			animation: reveal 1.5s linear 2s forwards;
+		}
+
+		.down{
+			height: map-get($typography, "coverTitle");
+			transform-origin: 50% 100%;
+			animation: reveal 1.5s linear 2s forwards;
+		}
+	}
+
+}
+
+
+@keyframes reveal {
+	100%{
+		transform: scaleY($zero);
+	}
+}
+
+@keyframes move {
+	100%{
+		opacity: $normal-scale;
+		transform: translate(-50%, -50%);
+	}
 }
