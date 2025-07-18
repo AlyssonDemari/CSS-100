@@ -51,11 +51,11 @@ body {
   transform: translate(-50%, -50%);
   font-size: 1.5rem;
   width: 17rem;
-  height: 4rem;
   border-radius: 2rem;
-  border: 0.2rem solid #FFF;
+  height: 4rem;
   z-index: 99;
   color: #FFF;
+  border: 0.2rem solid #FFF;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -72,7 +72,6 @@ body {
   bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
   opacity: 0;
 }
 #toggle:checked + label .container__img {
@@ -104,8 +103,8 @@ body {
 @keyframes hide {
   100% {
     width: 4rem;
+    border: 0.2rem solid #45B078;
     font-size: 0;
-    border: 2px solid #45B078;
   }
 }
 @keyframes circle {

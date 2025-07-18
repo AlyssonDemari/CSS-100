@@ -3,15 +3,16 @@
 $bg: #57D895;
 $bg-hover: #43b178;
 $line: #45B078;
+$line-border: .2rem solid $white;
+$line-border-animation: .2rem solid $line;
 
-$layaout: (
+$layout: (
     "button-width": 17rem,
     "circle-width": 4rem,
     "height": 4rem,
     "border-radius": 2rem,
     "font-size": 1.5rem,
     "upper-index": 99,
-    "border": .2rem solid $white,
 );
 
 $svg: (
@@ -40,14 +41,19 @@ $svg: (
     &__label{
         @include center();
         @include position-absolute( 50%, 0, 0, 50%, -50%, -50% );
-        font-size: map-get($layaout, "font-size");
-        width: map-get($layaout, "button-width");
-        height: map-get($layaout, "height");
-        border-radius: map-get($layaout, "border-radius");
-        border: map-get($layaout, "border");
-        z-index: map-get($layaout, "upper-index");
-        color: $white;
 
+        //Modificações utilizando map
+        font-size: map-get($layout, "font-size");
+        width: map-get($layout, "button-width");
+        border-radius: map-get($layout, "border-radius");
+        height: map-get($layout, "height");
+        z-index: map-get($layout, "upper-index");
+        
+        //modificação de variaveis
+        color: $white;
+        border: $line-border;
+
+        //Modificações manual
         user-select: none;
         text-transform: uppercase;
         cursor: pointer;
@@ -72,6 +78,8 @@ $svg: (
         //border: 2px solid red;
         @include position-absolute( 50%, 0, 0, 50%,);
         transform: translate(-50%, -50%) rotate(-90deg);
+
+        //Modificações utilizando map
         stroke-width: map-get($svg, "line-width");
         stroke-dasharray: map-get($svg, "dasharray");
         stroke-dashoffset: map-get($svg, "dashoffset");
@@ -92,21 +100,21 @@ $svg: (
 
 @keyframes hide {
     100%{
-        width: map-get($layaout, "circle-width");
+        width: map-get($layout, "circle-width");
+        border: $line-border-animation;
         font-size: 0;
-        border: 2px solid $line;
     }
 }
 
 @keyframes circle {
 	0% {
 		stroke-dashoffset: map-get($svg, "dasharray");
-        z-index: map-get($layaout, "upper-index" );
+        z-index: map-get($layout, "upper-index" );
 	}
 	50% {
 		stroke-dashoffset: map-get($svg, "dashoffset-animation");
 		stroke-dasharray: map-get($svg, "dasharray");
-        z-index: map-get($layaout, "upper-index" );
+        z-index: map-get($layout, "upper-index" );
         
 		transform:  translate(-50%,-50%)rotate(-90deg) scale(1);
 		opacity: 1;
@@ -129,6 +137,6 @@ $svg: (
 
 @keyframes back {
     100%{
-        width: map-get($layaout, "button-width");
+        width: map-get($layout, "button-width");
     }
 }
