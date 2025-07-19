@@ -8,36 +8,48 @@ $pointer: #FFCC30;
 .frame{
     background: $bg;
     position: relative;
+    @include center(column);
 }
 
-.water-map{
+.container__water-map{
     border-radius: .5rem;
     width: 25rem;
     height: 25rem;
     fill: $water;
     position: absolute;
-    z-index: 1;
+    top: 0;
+    left: 0;
+    z-index: 0;
     border: 2px solid red;
 }
 
-.marker{
-    // border: 2px solid red;
-    position: absolute;
-    top: 35%;
-    left: 45%;
-    z-index: 999;
-    font-size: 4rem;
-    color: $pointer;
-    animation: scale 2s ease-in-out infinite alternate;
-}
-.circle{
-    // border: 2px solid red;
-    fill: $shadow;
-    position: absolute;
-    top: 50%;
-    left: 45%;
-    animation: shadow 2s ease-in-out infinite alternate;
-    scale: 1;
+.location-marker{
+    @include center(column);
+    border: 2px solid blue;
+    width: 7rem;
+    height: 7rem;
+    	transform: perspective(600px) rotateY(0deg);
+        cursor: pointer;
+    
+    i{
+        font-size: 4rem;
+        // border: 2px solid pink;
+        animation: scale 2s ease-in-out infinite alternate;
+        color: $pointer;
+    }
+
+    .circle{
+        // border: 2px solid pink;
+        animation: shadow 2s ease-in-out infinite alternate;
+        fill: $shadow;
+    }
+
+    	&.active {
+		transform: perspective(600px) rotateY(90deg);
+		opacity: 1;
+		pointer-events: all;
+		transition: all .5s ease .4s;
+	}
 }
 
 
@@ -47,15 +59,38 @@ $pointer: #FFCC30;
 		transform: translate3d(0,0,0);
 	}
 	to {
-		transform: translate3d(0,-5px,0);
+		transform: translate3d(0,.5rem,0);
+        
 	}
+}
+@keyframes shadow {
+    from {
+        transform: scale(1) translate3d(0,0,0);
+    }
+    to {
+        transform: scale(1.3) translate3d(0,0,0);
+    }
 }
 
-@keyframes shadow {
-	from {
-		transform: scale(1) translate3d(0,0,0);
-	}
-	to {
-		transform: scale(1.3) translate3d(0,0,0);
-	}
-}
+// .marker{
+//     border: 2px solid red;
+//     position: absolute;
+//     top: 35%;
+//     left: 45%;
+//     z-index: 999;
+//     font-size: 4rem;
+//     color: $pointer;
+//     cursor: pointer;
+// 	transition: all .5s ease .4s;
+//     animation: scale 2s ease-in-out infinite alternate;
+// }
+
+// .circle{
+//     // border: 2px solid red;
+//     fill: $shadow;
+//     position: absolute;
+//     top: 50%;
+//     left: 45%;
+//     animation: shadow 2s ease-in-out infinite alternate;
+//     scale: 1;
+// }
