@@ -5,89 +5,144 @@ $water: #1F8DE4;
 $shadow: #1B7AC7;
 $pointer: #FFCC30;
 
-.frame{
-    background: $bg;
-    position: relative;
-    @include center(column);
+$tokens: (
+    "colors": (
+        "bg": #2196F3,
+        "water":#1F8DE4,
+        "shadow":#1B7AC7,
+        "pointer": #FFCC30,
+    ),
+    "spacing": (
+        "sm": 0.5rem,
+        "md": 1rem,
+        "lg": 2rem,
+        "margin-md": .8rem,
+        "button-padding": .4rem 2rem,
+    ),
+    "timing": (
+        "fast": 0.3s,
+        "medium": 0.7s,
+        "slow": 2s,
+        "slow-to-fast": cubic-bezier(1, 0.46, 0.45, 0.94),
+    ),
+    "font": (
+        "size-sm": .8rem,
+        "size-md": 1rem,
+        "sizePointer": 4rem,
+    ),
+    "layout": (
+        "cardW": 15rem,
+        "cardH": 12rem,
+        "full": 100%,
+        "lowest": 0,
+        "3d": preserve-3d,
+        "sm-radius": .2rem,
+        "md-radius": .4rem,
+        "lg-radius": .8rem,
+        "line": .1rem,
+    )
+);
+
+@function color($key) {
+  @return map-get(map-get($tokens, "colors"), $key);
+}
+@function spacing($key) {
+  @return map-get(map-get($tokens, "spacing"), $key);
+}
+@function timing($key) {
+  @return map-get(map-get($tokens, "timing"), $key);
+}
+@function font($key) {
+  @return map-get(map-get($tokens, "font"), $key);
+}
+@function layout($key) {
+  @return map-get(map-get($tokens, "layout"), $key);
 }
 
+// Sugestão para futuro projeto ao utilizar token
+// @function token($group, $key) {
+//   @return map-get(map-get($tokens, $group), $key);
+// }
+// token("layout", "cardW")
+
+
+.frame{
+    @include center(column);
+    background: color("bg");
+    position: relative;
+}
 
 .container{
 
     &__water-map{
-        border-radius: .5rem;
-        width: 25rem;
-        height: 25rem;
-        fill: $water;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 0;
+        @include position-absolute(0, 0, 0, 0);
+        fill: color("water");
+        border-radius: spacing("sm");
+        width: layout("full");
+        height: layout("full");
+        z-index: layout("lowest");
         //border: 2px solid rgb(81, 255, 0);
     }
 
     &__flipper{
         @include center(column);
-        perspective: preserve-3d;
-        
+        perspective: layout("3d");
     }
     
-    
     &__card{
-        width: 15rem;
-        height: 12rem;
+        width: layout("cardW");
+        height: layout("cardH");
+        transform-style: layout("3d");
         position: relative;
-        
-        transform-style: preserve-3d;
-        transition: all .5s ease-in-out;
-        animation: move-back 1s forwards;
+
+        transition: transform timing("medium") timing("slow-to-fast");
+
         
         .container__flipper.active &{
-            animation: move 1s forwards;
+            transform: rotateY(180deg);
         }
     }
     
     &__front, &__back{
-        height: 100%;
-        width: 100%;
+        height: layout("full");
+        width: layout("full");
         position: absolute;
         backface-visibility: hidden;
-        
     }
     
     &__front{
         //border: 2px solid pink;
         @include center(column, top);
         
-        i{
-            font-size: 4rem;
-            color: $pointer;
-            animation: scale 2s linear infinite alternate;
+        .marker{
+            font-size: font("sizePointer");
+            color: color("pointer");
+            animation: scale timing("slow") linear infinite alternate;
             cursor: pointer;
         }
         
         .circle{
-            fill: $shadow;
-            animation: shadow 2s linear infinite alternate;
+            fill: color("shadow");
+            animation: shadow timing("slow") linear infinite alternate;
             cursor: pointer;
         }
     }
     
     // Estilização da parte de tras
     &__back{
+        height: layout("full");
+        border-radius: layout("sm-radius");
         background: $white;
         transform: rotateY(180deg);
-        height: 100%;
-        border-radius: .2rem;
         cursor: pointer;
     }
 
     img{
-        border-radius: .2rem .2rem 0 0;
+        border-radius: layout("sm-radius") layout("sm-radius") 0 0;
     }
 
     &__local{
-        font-size: .8rem;
+        font-size: font("size-sm");
         //border: 2px solid pink;
         height: 66%;
         @include center(column, space-between);
@@ -95,26 +150,26 @@ $pointer: #FFCC30;
 
     &__info{
         //border: 2px solid green;
-        margin-top: .8rem;
+        margin-top: spacing("margin-md");
     }
 
     &__buttons{
         //border: 2px solid red;
-        width: 100%;
+        width: layout("full");
         @include center(row, space-around);
 
         button{
-            border: none;
-            width: 100%;
-            height: 100%;
-            background: none;
-            padding: .4rem 2rem;
+            padding: spacing("button-padding");
+            width: latout("full");
+            height: latout("full");
             color: $water;
+            background: none;
+            border: none;
             cursor: pointer;
+            background: $shadow;
 
             &:hover{
                 color: $white;
-                background: $shadow;
             }
         }
     }
@@ -128,31 +183,6 @@ $pointer: #FFCC30;
 
 }
 
-
-
-@keyframes move {
-    0%{
-        transform: rotateY(0deg);
-    }
-    50%{
-        transform: rotateY(90deg);
-    }
-    100%{
-        transform: rotateY(180deg);
-    }
-}
-
-@keyframes move-back {
-    0% {
-        transform: rotateY(180deg);
-    }
-    50%{
-        transform: rotateY(90deg);
-    }
-    to {
-        transform: rotateY(0deg);
-    }
-}
 
 @keyframes scale {
 	from {
