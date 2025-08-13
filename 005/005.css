@@ -116,6 +116,7 @@ article .container-statistic .graf-red, article .container-statistic .graf-blue 
 article .container-statistic .graf-red svg, article .container-statistic .graf-blue svg {
   position: absolute;
   top: -20%;
+  left: 0;
   fill: none;
   stroke: #FA7373;
   stroke-width: 2;
@@ -269,6 +270,6 @@ article .days ul {
   justify-content: space-around;
 }
 article .days ul li {
-  font: 0.7rem;
+  font-size: 0.7rem;
   color: rgba(100, 95, 95, 0.521);
 }/*# sourceMappingURL=005.css.map */

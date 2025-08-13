@@ -16,7 +16,7 @@ $white: #fff;
 .container{
     @include center();
     flex-direction: column;
-    gap: 15px;
+    gap: .5rem;
     height: 100%;
 
 
@@ -25,8 +25,8 @@ $white: #fff;
         width: 50%;
         position: relative;
 
-
         .one{
+            margin-left: .3rem;
             transform: translatex(5px);
             height: 90px;
             width: 25px;
@@ -43,7 +43,7 @@ $white: #fff;
             background-color: $white;
             position: absolute;
             top: 3px;
-            left: -9px;
+            left: -5px;
             transform: rotate(50deg);
         }
 
@@ -53,20 +53,22 @@ $white: #fff;
             border-radius: 50%;
             border: 22px solid $white;
             z-index: 1;
+            position: absolute;
+            left: 17%;
             box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
         }
 
         .zero1{
             @extend .zero;
             position: absolute;
-            left: 50%;
+            left: 58%;
             border: 22px solid $white;
             z-index: 0;
         }
     }
 
     .text{
-        line-height: 35px;
+        line-height: 50px;
         text-align: center;
         color: $white;
 

@@ -17,6 +17,7 @@ $white: #fff;
     @include center();
     flex-direction: column;
     gap: 8px;
+    cursor: pointer;
 
     .bar{
         width: 80px;

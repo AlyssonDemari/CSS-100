@@ -119,6 +119,7 @@ article{
             svg{
                 position: absolute;
                 top: -20%;
+                left: 0;
                 fill: none;
                 stroke: $red-line;
                 stroke-width: 2;
@@ -250,7 +251,7 @@ article{
             justify-content: space-around;
 
             li{
-                font: 0.7rem;
+                font-size: 0.7rem;
                 color: $lines;
             }
         }
