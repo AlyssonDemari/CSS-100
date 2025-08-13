@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <main>
+        <article class="view">
+            <header class="view__header">
+                <h1>${dados[cont].title}</h1>
+                <h2>#001</h2>
+            </header>
+            <section>
+                <iframe class="view__iframe" src="001/001.html" frameborder="0"></iframe>
+            </section>
+            <section class="view__info">
+                <p class="view__text">An easy start into the challenge with a custom build number with gradient.</p>
+                <div class="view__arrows">
+                    <i class="view__icon fa-solid fa-circle-arrow-left"></i>
+                    <i class="view__icon fa-solid fa-circle-arrow-right"></i>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script>
+        async function loadProjects() {
+            let cont = 0;
+            const response = await fetch('./projects.json');
+            const dados = await response.json();
+
+            function renderProject() {
+                const view = document.querySelector('.view');
+                view.innerHTML = `
+                    <header class="view__header">
+                        <h1 class="view__title">${dados[cont].title}</h1>
+                        <h2>${dados[cont].day}</h2>
+                    </header>
+                    <section>
+                        <iframe class="view__iframe" src="${dados[cont].project}" frameborder="0"></iframe>
+                    </section>
+                    <section class="view__info">
+                        <p class="view__text">${dados[cont].text}</p>
+                        <div class="view__arrows">
+                            <i class="view__icon fa-solid fa-circle-arrow-left"></i>
+                            <i class="view__icon fa-solid fa-circle-arrow-right"></i>
+                        </div>
+                    </section>
+                `;
+
+                const next = document.querySelector('.fa-circle-arrow-right');
+                const prev = document.querySelector('.fa-circle-arrow-left');
+
+                next.addEventListener('click', () => {
+                    if (cont < dados.length - 1) {
+                        cont++;
+                        renderProject();
+                    }
+                });
+
+                prev.addEventListener('click', () => {
+                    if (cont > 0) { 
+                        cont--;
+                        renderProject();
+                    }
+                });
+            }
+
+            renderProject();
+        }
+
+        loadProjects();
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+@use "standard";
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@100..900&display=swap');
+
+.view{
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1rem;
+    height: 37.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 10px 100px 1px rgba(0,0,0,0.1);
+    color: rgb(61, 61, 61);
+    
+    &__header{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-family: "Lexend Peta", sans-serif;
+    }
+
+    &__title{
+        font-size: clamp(1rem, 1vw, 2rem);
+    }
+
+    &__iframe{
+        width: 25rem;
+        height: 25rem;
+        margin: 1rem 0;
+    }
+
+    &__info{
+        width: 28.125rem;
+        height: 7rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__text{
+        width: 70%;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+    }
+
+    &__arrows{
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+        font-size: 2rem;
+    }
+
+    &__icon:hover{
+        color: rgba(61, 61, 61, 0.308);
+        cursor: pointer;
+    }
+}

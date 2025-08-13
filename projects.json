@@ -1,0 +1,152 @@
+[
+    {
+        "title": "100 Days CSS:",  
+        "text": "An easy start into the challenge with a custom build number with gradient.",
+        "day": "001",
+        "project": "001/001.html"
+    },
+    {
+        "title": "Menu Icon:",  
+        "text": "Used on almost every website by now, simple but impressively animated it becomes a real eye-catcher.",
+        "day": "002",
+        "project": "002/002.html"
+    },
+    {
+        "title": "The Pyramide:",  
+        "text": "Not as challenging as the real pyramids in Egypt, but the shadow path is not easy.",
+        "day": "003",
+        "project": "003/003.html"
+    },
+    {
+        "title": "Loading:",  
+        "text": "The best are always websites that do not need a loading status. If they do, here would be a calming one.",
+        "day": "004",
+        "project": "004/004.html"
+    },
+    {
+        "title": "Statistic:",  
+        "text": "In a world of numbers, it is important to be able to interpret them correctly. Beautiful statistics help to capture these data.",
+        "day": "005",
+        "project": "005/005.html"
+    },
+    {
+        "title": "Profile:",  
+        "text": "Who of you knows how many social media profiles you have already created? For a refreshing twist, you can also create one yourself.",
+        "day": "006",
+        "project": "006/006.html"
+    },
+    {
+        "title": "Notifications, Search and Menu:",  
+        "text": "The three cornerstones of any application? Brought together in the smallest possible space.",
+        "day": "007",
+        "project": "007/007.html"
+    },
+    {
+        "title": "Metaballs:",  
+        "text": "At first glance impossible to implement with CSS, but filters make this possible too.",
+        "day": "008",
+        "project": "008/008.html"
+    },
+    {
+        "title": "Rainy Night::",  
+        "text": "The perfect time of day and the perfect weather to program in peace. The raindrops even shatter on the ground.",
+        "day": "009",
+        "project": "009/009.html"
+    },
+    {
+        "title": "Watch:",  
+        "text": "Classic, noble, modern or playful? What do you want your favorite watch to look like?",
+        "day": "010",
+        "project": "010/010.html"
+    },
+    {
+        "title": "Walking Boots:",  
+        "text": "These boots are made for walking. Where are they going and for how long?",
+        "day": "011",
+        "project": "011/011.html"
+    },
+    {
+        "title": "Tooltip:",  
+        "text": "I'm quite sure, you already know what obsession means. But you can look it up anyways.",
+        "day": "012",
+        "project": "012/012.html"
+    },
+    {
+        "title": "User Gallery:",  
+        "text": "An idea for a transition between user overview and profile page.",
+        "day": "013",
+        "project": "013/013.html"
+    },
+    {
+        "title": "Byciclopter:",  
+        "text": "Which side of the card do you want to use? Either drive or fly to work in the morning?",
+        "day": "014",
+        "project": "014/014.html"
+    },
+    {
+        "title": "Upload:",  
+        "text": "Yes, you can actually drag and drop a file in there. But don't worry, the upload process is faked.",
+        "day": "015",
+        "project": "015/015.html"
+    },
+    {
+        "title": "Blobby:",  
+        "text": "It appears, wobbles, changes its shape and disappears again. Just like that.",
+        "day": "016",
+        "project": "016/016.html"
+    },
+    {
+        "title": "Penrose Triangle:",  
+        "text": "CSS makes even the impossible possible. Can you find out how it was done?",
+        "day": "017",
+        "project": "017/017.html"
+    },
+    {
+        "title": "Elastic:",  
+        "text": "I thought for a long time about the best way to achieve this effect. In the end, the solution was easier than expected.",
+        "day": "018",
+        "project": "018/018.html"
+    },
+    {
+        "title": "Slider with Radio Buttons:",  
+        "text": "Why use JavaScript when you can use CSS? Selectors can be wildly combined with each other.",
+        "day": "019",
+        "project": "019/019.html"
+    },
+    {
+        "title": "Send Mail:",  
+        "text": "Surprise your visitors with a nice animation instead of a simple < request sent >.",
+        "day": "020",
+        "project": "020/020.html"
+    },
+    {
+        "title": "Pac-Man:",  
+        "text": "Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka Waka…",
+        "day": "021",
+        "project": "021/021.html"
+    },
+    {
+        "title": "Fitness Tracker:",  
+        "text": "Don't sit on your chair all day long. Get up, jump, run, exercice and burn some calories.",
+        "day": "022",
+        "project": "022/022.html"
+    },
+    {
+        "title": "Animated Typography:",  
+        "text": "Some big, bold and beautiful animated typography will enhance every boring header section.",
+        "day": "023",
+        "project": "023/023.html"
+    },
+    {
+        "title": "Button:",  
+        "text": "Do you really wanna let your users guess if their actions were successful? No! So give them some feedback if they click a button.",
+        "day": "024",
+        "project": "024/024.html"
+    },
+    {
+        "title": "Map Marker:",  
+        "text": "Did I just placed a marker in the middle of some water to get a nice color contrast? Maybe. Click on it for a nice transition.",
+        "day": "025",
+        "project": "025/025.html"
+    }
+]
