@@ -1,4 +1,4 @@
-<a target="_blank" href="https://alyssondemari.github.io/CSS-100/"># Desafio 100 Dias de CSSi</a>
+# <a target="_blank" href="https://alyssondemari.github.io/CSS-100/">Desafio 100 Dias de CSSi</a>
 
 <br>
 Este repositório é dedicado ao desafio "100 Dias de CSS", uma jornada para aprimorar minhas habilidades em HTML e CSS através da criação de um novo projeto a cada dia, durante 100 dias consecutivos.
