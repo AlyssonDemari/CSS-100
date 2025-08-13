@@ -1,11 +1,11 @@
 <a target="_blank" href="https://alyssondemari.github.io/CSS-100/">Click Aqui</a>
 
-#Desafio 100 Dias de CSS
+#Desafio 100 Dias de CSS <br>
 Este repositório é dedicado ao desafio "100 Dias de CSS", uma jornada para aprimorar minhas habilidades em HTML e CSS através da criação de um novo projeto a cada dia, durante 100 dias consecutivos.
-
-##Sobre o Projeto
+<hr>
+##Sobre o Projeto <br>
 O objetivo principal é explorar a criatividade e a versatilidade do CSS, saindo da zona de conforto e aplicando técnicas que vão desde o básico ao avançado. Cada pasta representa um desafio diário e contém os arquivos HTML e CSS correspondentes, com os códigos e a estilização para recriar as peças propostas.
-
+<hr>
 Tecnologias Utilizadas
 
 HTML5
